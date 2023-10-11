@@ -1,7 +1,8 @@
 {
-  "name": "automedics-frontend",
+  "name": "auto-medics",
   "version": "0.1.0",
   "private": true,
+  "author": "Faijul Azim",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
