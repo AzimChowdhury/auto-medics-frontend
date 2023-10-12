@@ -18,7 +18,7 @@ function Services() {
                 textAlign: 'center',
                 fontSize: "30px",
                 padding: "40px 0px"
-            }}>Our Services</h2>
+            }}>Our Top Services</h2>
             <div className='cardContainer'>
                 {
                     services?.map(service => <>

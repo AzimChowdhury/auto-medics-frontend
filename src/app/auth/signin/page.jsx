@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import { submitHandler } from 'react-hook-form'
+import './signin.css'
 
 
 
@@ -31,10 +32,11 @@ const LoginPage = () => {
             <Col sm={12} md={16} lg={10}>
                 <Image src={loginImage} width={500} alt="login image" />
             </Col>
-            <Col sm={12} md={8} lg={8}>
+            <Col style={{ margin: '0px 10%' }} sm={12} md={8} lg={8}>
                 <h1
                     style={{
-                        margin: "15px 0px",
+                        margin: "25px 0px",
+                        textAlign: 'center'
                     }}
                 >
                     First login your account
@@ -56,9 +58,9 @@ const LoginPage = () => {
                                 label="User Password"
                             />
                         </div>
-                        <Button type="primary" htmlType="submit">
+                        <button className="loginButton" htmlType="submit">
                             Login
-                        </Button>
+                        </button>
                     </Form>
                 </div>
             </Col>

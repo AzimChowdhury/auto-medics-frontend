@@ -1,4 +1,5 @@
 import React from 'react'
+import './banner.css'
 
 function Banner() {
 
@@ -13,27 +14,11 @@ function Banner() {
     };
     return (
         <div style={divStyle}>
-            <h1 style={{
-                textAlign: 'center',
-                paddingTop: '100px',
-                fontSize: '50px'
-            }}>AUTO MEDICS</h1>
+            <h1 className='bannerHeader'>AUTO MEDICS</h1>
             <div >
-                <p style={{
-                    textAlign: 'center',
-                    paddingTop: '40px',
-                    fontSize: '25px'
-                }}>The best car clinic nationwide</p>
-                <p style={{
-                    textAlign: 'center',
-                    paddingTop: '20px',
-                    fontSize: '25px'
-                }}> Your trusted partner in automotive care, ensuring your vehicles longevity and performance.</p>
-                <p style={{
-                    textAlign: 'center',
-                    paddingTop: '20px',
-                    fontSize: '25px'
-                }}>Where your cars health is our priority, and quality service is our commitment.</p>
+                <p className='bannerSubTitles'>The best car clinic nationwide</p>
+                <p className='bannerSubTitles'> Your trusted partner in automotive care, ensuring your vehicles longevity and performance.</p>
+                <p className='bannerSubTitles'>Where your cars health is our priority, and quality service is our commitment.</p>
 
             </div>
         </div>

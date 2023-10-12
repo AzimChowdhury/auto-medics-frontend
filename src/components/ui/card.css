@@ -34,3 +34,20 @@
     text-align: center;
     padding: 10px 0px;
 }
+
+
+/* For tablet - 2 cards in a row */
+@media (max-width: 768px) {
+    .cardContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+}
+
+/* For mobile - 1 card in a row */
+@media (max-width: 480px) {
+    .cardContainer {
+        grid-template-columns: 1fr;
+    }
+}
