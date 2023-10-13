@@ -21,13 +21,14 @@ function Services() {
             }}>Our Top Services</h2>
             <div className='cardContainer'>
                 {
-                    services?.map(service => <>
+                    services?.map(service => (
                         <ReusableCard
+                            key={service.id}
                             name={service?.name}
                             description={service?.description}
                             image={service?.image}
                         />
-                    </>
+                    )
                     )
                 }
             </div>

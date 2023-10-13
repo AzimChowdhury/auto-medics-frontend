@@ -5,9 +5,8 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
-import { submitHandler } from 'react-hook-form'
 import './signin.css'
-
+import { submitHandler } from 'react-hook-form'
 
 
 const LoginPage = () => {
@@ -62,6 +61,7 @@ const LoginPage = () => {
                             Login
                         </button>
                     </Form>
+
                 </div>
             </Col>
         </Row>

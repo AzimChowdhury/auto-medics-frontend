@@ -22,6 +22,14 @@ const Header = () => {
                 </Link>
             ),
         },
+        {
+            key: "1",
+            label: (
+                <Link className="dropdownItem" href='/auth/signup'  >
+                    Sign Up
+                </Link>
+            ),
+        },
         // {
         //     key: "1",
         //     label: (
@@ -52,12 +60,13 @@ const Header = () => {
                         <h1 className="headerText"  >AUTO-MEDICS</h1>
                     </div>
                     <div>
-                        <div class="header-menu">
-                            <ul class="menu">
+                        <div className="header-menu">
+                            <ul className="menu">
                                 <li><Link style={{ color: "white" }} href="/auth/signin">Sign In</Link></li>
+                                <li><Link style={{ color: "white" }} href="/auth/signup">Sign Up</Link></li>
                             </ul>
 
-                            <div class="dropdown">
+                            <div className="dropdown">
                                 <Dropdown
                                     menu={{
                                         items,
