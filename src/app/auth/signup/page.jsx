@@ -7,16 +7,28 @@ import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import '../signin/signin.css'
 import { submitHandler } from 'react-hook-form'
+import { useUserSignupMutation } from "@/redux/api/authApi";
+import { setToLocalStorage } from "@/utils/local-storage";
+import { authKey } from "@/constants/storageKey";
 
 
 const SignUp = () => {
     const router = useRouter()
+    const [userSignup] = useUserSignupMutation()
 
     const onSubmit = async (data) => {
+        data.role = 'customer'
         try {
-            console.log(data)
+            const res = await userSignup(data).unwrap()
+            if (res?.accessToken) {
+                setToLocalStorage(authKey, res.accessToken)
+                message.success('user signed in successfully')
+                router.push('/')
+            } else {
+                message.error('failed to sign in, try again')
+            }
         } catch (err) {
-            console.error(err)
+            console.error(err.message)
         }
     }
 
@@ -42,8 +54,11 @@ const SignUp = () => {
                 </h1>
                 <div>
                     <Form submitHandler={onSubmit}>
-                        <div>
-                            <FormInput name="email" type="email" size="large" label="Email" />
+
+                        <div style={{
+                            margin: "15px 0px",
+                        }}>
+                            <FormInput name="email" type="email" size="large" label="Email *" required={true} />
                         </div>
                         <div
                             style={{
@@ -54,9 +69,10 @@ const SignUp = () => {
                                 name="password"
                                 type="password"
                                 size="large"
-                                label=" Password"
+                                label=" Password *"
                             />
                         </div>
+
                         <button className="loginButton" htmlType="submit">
                             Sign Up
                         </button>

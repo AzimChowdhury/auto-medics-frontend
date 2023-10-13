@@ -7,14 +7,27 @@ import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import './signin.css'
 import { submitHandler } from 'react-hook-form'
+import Link from "next/link";
+import { useUserSigninMutation } from "@/redux/api/authApi";
+import { setToLocalStorage } from "@/utils/local-storage";
+import { authKey } from "@/constants/storageKey";
 
 
 const LoginPage = () => {
     const router = useRouter()
+    const [userSignin] = useUserSigninMutation()
 
     const onSubmit = async (data) => {
         try {
-            console.log(data)
+            const res = await userSignin(data).unwrap()
+
+            if (res?.accessToken) {
+                setToLocalStorage(authKey, res.accessToken)
+                message.success('user logged in successfully')
+                router.push('/')
+            } else {
+                message.error('failed to log in')
+            }
         } catch (err) {
             console.error(err)
         }
@@ -40,10 +53,17 @@ const LoginPage = () => {
                 >
                     First login your account
                 </h1>
+                <div style={{ textAlign: "center", fontSize: "16px", margin: "20px 0px" }}>
+                    <p>Does not have an account ?
+                        <Link href='/auth/signup'>
+                            sign up first
+                        </Link>
+                    </p>
+                </div>
                 <div>
                     <Form submitHandler={onSubmit}>
                         <div>
-                            <FormInput name="id" type="text" size="large" label="User Id" />
+                            <FormInput name="email" type="text" size="large" label="Email *" />
                         </div>
                         <div
                             style={{
@@ -54,7 +74,7 @@ const LoginPage = () => {
                                 name="password"
                                 type="password"
                                 size="large"
-                                label="User Password"
+                                label="Password *"
                             />
                         </div>
                         <button className="loginButton" htmlType="submit">

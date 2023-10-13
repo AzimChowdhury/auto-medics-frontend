@@ -1,49 +1,49 @@
 'use client'
-import { Avatar, Button, Col, Dropdown, Layout, Menu, Row, Space } from "antd";
+import { Avatar, Button, Col, Dropdown, Layout, Menu, Row, Space, message } from "antd";
 import { MenuFoldOutlined, UserOutlined } from "@ant-design/icons";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import './header.css'
+import { authKey } from "@/constants/storageKey";
+import { getUserInfo } from "@/helpers/auth/authHelper";
+import { useRouter } from "next/navigation";
 const { Header: AntHeader } = Layout;
 
 const Header = () => {
-    const router = useRouter();
+    const router = useRouter()
+    const user = getUserInfo()
 
     const logOut = () => {
-        router.push("/login");
+        localStorage.removeItem(authKey)
+        message.success('log out successful')
+        router.push('/auth/signin')
     };
 
     const items = [
-        {
-            key: "0",
-            label: (
-                <Link className="dropdownItem" href='/auth/signin'  >
-                    Sign In
-                </Link>
-            ),
-        },
-        {
-            key: "1",
-            label: (
-                <Link className="dropdownItem" href='/auth/signup'  >
-                    Sign Up
-                </Link>
-            ),
-        },
-        // {
-        //     key: "1",
-        //     label: (
-        //         <Button onClick={logOut} type="text" danger>
-        //             Logout
-        //         </Button>
-        //     ),
-        // },
+        user ?
+            {
+                key: "1",
+                label: (
+                    <Button onClick={logOut} type="text" danger>
+                        Logout
+                    </Button>
+                ),
+            } :
+            {
+                key: "0",
+                label: (
+                    <Link className="dropdownItem" href='/auth/signin'  >
+                        Sign In
+                    </Link>
+                ),
+            },
+
+
     ];
     return (
         <AntHeader
 
             style={{
-                background: "#007BFF",
+                background: "linear-gradient(to right, #000875, #007BFF)",
                 height: 'auto',
                 padding: 0
             }}
@@ -62,8 +62,22 @@ const Header = () => {
                     <div>
                         <div className="header-menu">
                             <ul className="menu">
-                                <li><Link style={{ color: "white" }} href="/auth/signin">Sign In</Link></li>
-                                <li><Link style={{ color: "white" }} href="/auth/signup">Sign Up</Link></li>
+
+                                <li><Link style={{ color: "white" }} href="">Services</Link></li>
+                                <li><Link style={{ color: "white" }} href="">About Us</Link></li>
+                                <li><Link style={{ color: "white" }} href="/profile">Dashboard</Link></li>
+
+
+                                {
+                                    user ?
+                                        <li><Button onClick={logOut} type="primary" danger>
+                                            Logout
+                                        </Button></li>
+                                        :
+
+                                        <li><Link style={{ color: "white" }} href="/auth/signin">Sign In</Link></li>
+                                }
+
                             </ul>
 
                             <div className="dropdown">
