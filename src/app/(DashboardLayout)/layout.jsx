@@ -5,7 +5,9 @@ import { getUserInfo } from "@/helpers/auth/authHelper";
 import { Layout } from "antd";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import dynamic from 'next/dynamic';
 
+const NoSSRSidebar = dynamic(() => import('../../components/ui/Sidebar'), { ssr: false });
 
 
 
@@ -20,7 +22,7 @@ const DashboardLayout = ({ children }) => {
     }, [router, user])
 
     return <Layout hasSider>
-        <SideBar />
+        <NoSSRSidebar />
         <Contents>{children}</Contents>
     </Layout>
 };

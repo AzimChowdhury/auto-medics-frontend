@@ -6,7 +6,7 @@ const ReuseableTables = ({
     loading = false,
     columns,
     dataSource,
-    pageSize = 5,
+    pageSize = 20,
     totalPages,
     onPaginationChange,
     onTableChange,
@@ -17,7 +17,7 @@ const ReuseableTables = ({
     const paginationConfig = showPagination ? {
         pageSize: pageSize,
         total: totalPages,
-        pageSizeOptions: [5, 10, 20],
+        pageSizeOptions: [20, 50, 100],
         onchange: onPaginationChange
     } : false;
 

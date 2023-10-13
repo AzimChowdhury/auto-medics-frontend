@@ -1,6 +1,7 @@
 "use client";
 import ReuseableTables from "@/components/ui/ReusableTables";
 import ActionBar from "@/components/ui/actionBar";
+import { useGetCustomersQuery } from "@/redux/api/customerApi";
 import { useDebounced } from "@/redux/hooks";
 import { DeleteOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
@@ -13,7 +14,7 @@ import { useState } from "react";
 const ManageCustomers = () => {
     const query = {};
     const [page, setPage] = useState(1);
-    const [size, setSize] = useState(10);
+    const [size, setSize] = useState(20);
     const [sortBy, setSortBy] = useState("");
     const [sortOrder, setSortOrder] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
@@ -32,12 +33,10 @@ const ManageCustomers = () => {
         query["searchTerm"] = debouncedSearchTerm;
     }
 
+    const { data, isLoading } = useGetCustomersQuery({ ...query });
 
-    // const { data, isLoading } = useStudentsQuery({ ...query });
-    const data = []
-    const isLoading = false
 
-    const customers = data?.customers;
+    const customers = data;
     const meta = data?.meta;
 
     const columns = [

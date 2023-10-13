@@ -3,11 +3,16 @@ import FooterComponent from '@/components/ui/Footer'
 import Header from '@/components/ui/Header'
 import Services from '@/components/ui/Services'
 import React from 'react'
+import dynamic from 'next/dynamic';
+
+const NoSSRHeader = dynamic(() => import('../components/ui/Header'), { ssr: false });
+
+
 
 function HomePage() {
   return (
     <div>
-      <Header />
+      <NoSSRHeader />
       <Banner />
       <Services />
       <FooterComponent />
