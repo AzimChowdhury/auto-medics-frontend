@@ -24,7 +24,7 @@ const LoginPage = () => {
             if (res?.accessToken) {
                 setToLocalStorage(authKey, res.accessToken)
                 message.success('user logged in successfully')
-                router.push('/')
+                router.push('/profile')
             } else {
                 message.error('failed to log in')
             }

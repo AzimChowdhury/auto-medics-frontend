@@ -5,8 +5,10 @@ import { useGetServicesQuery } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
 import { DeleteOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import '../../dashboard.css'
 
 
 
@@ -36,10 +38,19 @@ const ManageServices = () => {
 
     const { data, isLoading } = useGetServicesQuery({ ...query });
 
-    const bookings = data;
+    const services = data;
     const meta = data?.meta;
 
     const columns = [
+        {
+            title: "Image",
+            dataIndex: "image",
+            render: function (data) {
+                return (
+                    <Image className="tableImage" src={data} width={100} height={100} alt="user" />
+                )
+            },
+        },
         {
             title: "Name",
             dataIndex: "name",
@@ -149,7 +160,7 @@ const ManageServices = () => {
             <ReuseableTables
                 loading={isLoading}
                 columns={columns}
-                dataSource={bookings}
+                dataSource={services}
                 pageSize={size}
                 totalPages={meta?.total}
                 onPaginationChange={onPaginationChange}

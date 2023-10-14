@@ -23,7 +23,7 @@ const SignUp = () => {
             if (res?.accessToken) {
                 setToLocalStorage(authKey, res.accessToken)
                 message.success('user signed in successfully')
-                router.push('/')
+                router.push('/profile')
             } else {
                 message.error('failed to sign in, try again')
             }

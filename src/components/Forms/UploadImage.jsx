@@ -22,9 +22,9 @@ const beforeUpload = (file) => {
     return isJpgOrPng && isLt2M;
 };
 
-const UploadImage = ({ name }) => {
+const UploadImage = ({ name, defaultImage }) => {
     const [loading, setLoading] = useState(false);
-    const [imageUrl, setImageUrl] = useState();
+    const [imageUrl, setImageUrl] = useState(defaultImage);
     const { setValue } = useFormContext()
 
     const handleChange = (info) => {

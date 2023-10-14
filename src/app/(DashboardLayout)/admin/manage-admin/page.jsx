@@ -5,8 +5,10 @@ import { useGetAdminsQuery } from "@/redux/api/userApi";
 import { useDebounced } from "@/redux/hooks";
 import { DeleteOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import '../../dashboard.css'
 
 
 
@@ -43,6 +45,14 @@ const ManageAdmin = () => {
         {
             title: "Image",
             dataIndex: "image",
+            render: function (data) {
+                return (
+                    <>
+                        <Image className="tableImage" src={data} width={100} height={100} alt="user" />
+
+                    </>
+                );
+            },
         },
         {
             title: "Name",

@@ -8,6 +8,7 @@ import './profile.css'
 import { Button } from 'antd'
 import { EditOutlined } from '@ant-design/icons'
 import Link from 'next/link'
+import dynamic from "next/dynamic";
 
 function Profile() {
     const user = getUserInfo()
@@ -33,4 +34,6 @@ function Profile() {
     )
 }
 
-export default Profile
+
+
+export default dynamic(() => Promise.resolve(Profile), { ssr: false })

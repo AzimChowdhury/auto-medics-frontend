@@ -45,7 +45,10 @@ const Header = () => {
             style={{
                 background: "linear-gradient(to right, #000875, #007BFF)",
                 height: 'auto',
-                padding: 0
+                padding: 0,
+                position: 'sticky',
+                top: 0,
+                zIndex: 99
             }}
         >
             <Row
