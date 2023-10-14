@@ -18,8 +18,19 @@ export const userApi = baseApi.injectEndpoints({
                 params: query
             })
         }),
+        getSpecialists: build.query({
+            query: (query) => ({
+                url: `${URL}/specialists`,
+                method: "GET",
+                params: query
+            })
+        }),
     })
 })
 
 
-export const { useGetCustomersQuery, useGetAdminsQuery } = userApi
+export const {
+    useGetCustomersQuery,
+    useGetAdminsQuery,
+    useGetSpecialistsQuery
+} = userApi

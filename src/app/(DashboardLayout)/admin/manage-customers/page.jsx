@@ -1,7 +1,7 @@
 "use client";
 import ReuseableTables from "@/components/ui/ReusableTables";
 import ActionBar from "@/components/ui/actionBar";
-import { useGetCustomersQuery } from "@/redux/api/customerApi";
+import { useGetCustomersQuery } from "@/redux/api/userApi";
 import { useDebounced } from "@/redux/hooks";
 import { DeleteOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";

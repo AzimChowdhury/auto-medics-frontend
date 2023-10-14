@@ -1,6 +1,7 @@
 "use client";
 import ReuseableTables from "@/components/ui/ReusableTables";
 import ActionBar from "@/components/ui/actionBar";
+import { useGetServicesQuery } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
 import { DeleteOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
@@ -33,11 +34,9 @@ const ManageServices = () => {
     }
 
 
-    // const { data, isLoading } = useStudentsQuery({ ...query });
-    const data = []
-    const isLoading = false
+    const { data, isLoading } = useGetServicesQuery({ ...query });
 
-    const bookings = data?.bookings;
+    const bookings = data;
     const meta = data?.meta;
 
     const columns = [
@@ -52,16 +51,44 @@ const ManageServices = () => {
         {
             title: "Price",
             dataIndex: "price",
+            render: function (data) {
+                return (
+                    <p>$ {data}</p>
+                )
+            },
             sorter: true
         },
         {
             title: "Time",
             dataIndex: "time",
+            render: function (data) {
+                return (
+                    <p> {data}/ hr</p>
+                )
+            },
+        },
+        {
+            title: "Specialist",
+            dataIndex: "specialist",
+            render: function (data) {
+                return (
+                    <p>
+                        {data.name ? data.name : data.email}
+                    </p>
+                );
+            },
         },
         {
             title: "Bookings",
-            dataIndex: "bookings",
-            sorter: true
+            dataIndex: "Bookings",
+            sorter: true,
+            render: function (data) {
+                return (
+                    <p>
+                        {data.length}
+                    </p>
+                );
+            }
         },
         {
             title: "Action",

@@ -1,6 +1,7 @@
 "use client";
 import ReuseableTables from "@/components/ui/ReusableTables";
 import ActionBar from "@/components/ui/actionBar";
+import { useGetSpecialistsQuery } from "@/redux/api/userApi";
 import { useDebounced } from "@/redux/hooks";
 import { DeleteOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
@@ -33,11 +34,9 @@ const ManageSpecialists = () => {
     }
 
 
-    // const { data, isLoading } = useStudentsQuery({ ...query });
-    const data = []
-    const isLoading = false
+    const { data, isLoading } = useGetSpecialistsQuery({ ...query });
 
-    const specialists = data?.specialists;
+    const specialists = data;
     const meta = data?.meta;
 
     const columns = [
