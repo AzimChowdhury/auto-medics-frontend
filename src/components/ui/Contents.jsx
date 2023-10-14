@@ -11,7 +11,7 @@ const Contents = ({ children }) => {
                 textAlign: 'center',
                 fontSize: '35px',
                 background: 'linear-gradient(90deg, #000875, #2387fa)',
-                '-webkit-background-clip': 'text',
+                WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 color: 'transparent'
             }}>

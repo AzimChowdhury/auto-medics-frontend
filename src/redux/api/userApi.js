@@ -25,6 +25,13 @@ export const userApi = baseApi.injectEndpoints({
                 params: query
             })
         }),
+        myProfile: build.query({
+            query: (query) => ({
+                url: `${URL}/profile`,
+                method: "GET",
+                params: query
+            })
+        }),
     })
 })
 
@@ -32,5 +39,6 @@ export const userApi = baseApi.injectEndpoints({
 export const {
     useGetCustomersQuery,
     useGetAdminsQuery,
-    useGetSpecialistsQuery
+    useGetSpecialistsQuery,
+    useMyProfileQuery
 } = userApi

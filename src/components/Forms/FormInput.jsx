@@ -5,7 +5,7 @@ import { useFormContext, Controller } from "react-hook-form"
 
 
 
-const FormInput = ({ name, type, size, value, id, placeholder, validation, label, required }) => {
+const FormInput = ({ name, type, size, value, id, placeholder, validation, label, required, disabled }) => {
     const { control, formState: { errors } } = useFormContext()
     return (
         <>
@@ -33,6 +33,7 @@ const FormInput = ({ name, type, size, value, id, placeholder, validation, label
                             placeholder={placeholder}
                             value={value ? value : field.value}
                             required={required}
+                            disabled={disabled}
                         />
 
                 )}
