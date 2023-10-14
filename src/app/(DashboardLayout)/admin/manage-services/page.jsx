@@ -84,7 +84,7 @@ const ManageServices = () => {
             render: function (data) {
                 return (
                     <p>
-                        {data.name ? data.name : data.email}
+                        {data?.name}
                     </p>
                 );
             },

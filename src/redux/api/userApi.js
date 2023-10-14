@@ -10,21 +10,31 @@ export const userApi = baseApi.injectEndpoints({
                 url: `${URL}/customers`,
                 method: "GET",
                 params: query
-            })
+            }),
+            providesTags: [customer]
         }),
         getAdmins: build.query({
             query: (query) => ({
                 url: `${URL}/admins`,
                 method: "GET",
                 params: query
-            })
+            }),
+            providesTags: [admin]
+        }),
+        deleteAdmins: build.mutation({
+            query: (data) => ({
+                url: `${URL}/admin?email=${data}`,
+                method: "DELETE"
+            }),
+            invalidatesTags: [admin]
         }),
         getSpecialists: build.query({
             query: (query) => ({
                 url: `${URL}/specialists`,
                 method: "GET",
                 params: query
-            })
+            }),
+            providesTags: [specialist]
         }),
         myProfile: build.query({
             query: (query) => ({
@@ -51,5 +61,6 @@ export const {
     useGetAdminsQuery,
     useGetSpecialistsQuery,
     useMyProfileQuery,
-    useUpdateProfileMutation
+    useUpdateProfileMutation,
+    useDeleteAdminsMutation
 } = userApi

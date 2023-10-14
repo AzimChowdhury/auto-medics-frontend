@@ -1,14 +1,15 @@
 "use client";
 import ReuseableTables from "@/components/ui/ReusableTables";
 import ActionBar from "@/components/ui/actionBar";
-import { useGetAdminsQuery } from "@/redux/api/userApi";
+import { useDeleteAdminsMutation, useGetAdminsQuery } from "@/redux/api/userApi";
 import { useDebounced } from "@/redux/hooks";
 import { DeleteOutlined, ReloadOutlined } from "@ant-design/icons";
-import { Button, Input } from "antd";
+import { Button, Input, message } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import '../../dashboard.css'
+import DeleteModal from "@/components/ui/DeleteModal";
 
 
 
@@ -20,6 +21,8 @@ const ManageAdmin = () => {
     const [sortBy, setSortBy] = useState("");
     const [sortOrder, setSortOrder] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [deleteEmail, setDeleteEmail] = useState('')
 
     query["limit"] = size;
     query["page"] = page;
@@ -35,6 +38,7 @@ const ManageAdmin = () => {
         query["searchTerm"] = debouncedSearchTerm;
     }
 
+    const [deleteAdmins] = useDeleteAdminsMutation()
 
     const { data, isLoading } = useGetAdminsQuery({ ...query });
 
@@ -73,11 +77,11 @@ const ManageAdmin = () => {
         },
         {
             title: "Action",
-            dataIndex: "id",
+            dataIndex: "email",
             render: function (data) {
                 return (
                     <>
-                        <Button onClick={() => console.log(data)} type="primary" danger>
+                        <Button onClick={() => { showModal(); setDeleteEmail(data) }} type="primary" danger>
                             <DeleteOutlined />
                         </Button>
                     </>
@@ -100,6 +104,44 @@ const ManageAdmin = () => {
         setSortOrder("");
         setSearchTerm("");
     };
+
+
+
+    const deleteHandler = async (email) => {
+        message.loading('deleting . . .')
+        try {
+
+            const res = await deleteAdmins(email).unwrap()
+            if (res?.id) {
+                message.success('Admin Deleted successfully')
+            } else {
+                message.error('Admin Delete Failed')
+            }
+        } catch (err) {
+            console.error(err.message);
+            message.error(err.message)
+        }
+    };
+
+
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleOk = () => {
+        deleteHandler(deleteEmail)
+        setIsModalOpen(false);
+        setDeleteEmail('')
+    };
+
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
+
+
+
+
+
     return (
         <div>
             <ActionBar title="Admins">
@@ -137,6 +179,23 @@ const ManageAdmin = () => {
                 onTableChange={onTableChange}
                 showPagination={true}
             />
+
+
+
+
+
+
+            {/* delete confirmation modal  */}
+
+            <DeleteModal
+                title="Are you sure you want to delete the Admin ? "
+                subTitle="Remember once it will be deleted, you will never get it back. "
+                isModalOpen={isModalOpen}
+                handleOk={handleOk}
+                handleCancel={handleCancel}
+            />
+
+
         </div>
     );
 };
