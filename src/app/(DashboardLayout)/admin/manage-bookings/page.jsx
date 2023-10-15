@@ -1,10 +1,11 @@
 "use client";
+import DeleteModal from "@/components/ui/DeleteModal";
 import ReuseableTables from "@/components/ui/ReusableTables";
 import ActionBar from "@/components/ui/actionBar";
-import { useGetBookingsQuery } from "@/redux/api/bookingsApi";
+import { useDeleteBookingsMutation, useGetBookingsQuery } from "@/redux/api/bookingsApi";
 import { useDebounced } from "@/redux/hooks";
 import { DeleteOutlined, ReloadOutlined } from "@ant-design/icons";
-import { Button, Input } from "antd";
+import { Button, Input, message } from "antd";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -18,6 +19,9 @@ const ManageBookings = () => {
     const [sortBy, setSortBy] = useState("");
     const [sortOrder, setSortOrder] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [deleteId, setDeleteId] = useState('')
+
 
     query["limit"] = size;
     query["page"] = page;
@@ -33,7 +37,7 @@ const ManageBookings = () => {
         query["searchTerm"] = debouncedSearchTerm;
     }
 
-
+    const [deleteBookings] = useDeleteBookingsMutation()
     const { data, isLoading } = useGetBookingsQuery();
 
     const bookings = data;
@@ -129,7 +133,7 @@ const ManageBookings = () => {
             render: function (data) {
                 return (
                     <>
-                        <Button onClick={() => console.log(data)} type="primary" danger>
+                        <Button onClick={() => { showModal(); setDeleteId(data) }} type="primary" danger>
                             <DeleteOutlined />
                         </Button>
                     </>
@@ -152,6 +156,47 @@ const ManageBookings = () => {
         setSortOrder("");
         setSearchTerm("");
     };
+
+
+
+
+    const deleteHandler = async (id) => {
+        message.loading('deleting . . .')
+        try {
+
+            const res = await deleteBookings(id).unwrap()
+
+            if (res?.id) {
+                message.success('Booking canceled successfully')
+            } else {
+                message.error('Bookings cancelation Failed')
+            }
+        } catch (err) {
+            console.error(err.message);
+            message.error(err.message)
+        }
+    };
+
+
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleOk = () => {
+        deleteHandler(deleteId)
+        setIsModalOpen(false);
+        setDeleteId('')
+    };
+
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
+
+
+
+
+
+
     return (
         <div>
             <ActionBar title="Bookings">
@@ -186,6 +231,21 @@ const ManageBookings = () => {
                 onTableChange={onTableChange}
                 showPagination={true}
             />
+
+
+            {/* delete confirmation modal  */}
+
+            <DeleteModal
+                title="Are you sure you want to Cancel this booking ? "
+                subTitle="Remember once it will be deleted, you will never get it back. "
+                isModalOpen={isModalOpen}
+                handleOk={handleOk}
+                handleCancel={handleCancel}
+            />
+
+
+
+
         </div>
     );
 };

@@ -75,11 +75,17 @@ const ManageSpecialists = () => {
             dataIndex: "Services",
             render: function (data) {
                 return (
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <div style={{ marginRight: "20px" }}>{data?.length} - </div>
-                        <div>
-                            {data?.map(service => <p key={service?.id}>{service?.name}</p>)}
-                        </div>
+                    <div>
+                        {
+                            data?.length > 0 ?
+                                <div style={{ display: 'flex', alignItems: 'center' }}>
+                                    <div style={{ marginRight: "20px" }}>{data?.length} - </div>
+                                    <div>
+                                        {data?.map(service => <p key={service?.id}>{service?.name}</p>)}
+                                    </div>
+                                </div>
+                                : <p >None</p>
+                        }
                     </div>
                 )
             }

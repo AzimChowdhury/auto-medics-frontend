@@ -1,14 +1,15 @@
 "use client";
 import ReuseableTables from "@/components/ui/ReusableTables";
 import ActionBar from "@/components/ui/actionBar";
-import { useGetServicesQuery } from "@/redux/api/serviceApi";
+import { useDeleteServiceMutation, useGetServicesQuery } from "@/redux/api/serviceApi";
 import { useDebounced } from "@/redux/hooks";
-import { DeleteOutlined, ReloadOutlined } from "@ant-design/icons";
-import { Button, Input } from "antd";
+import { DeleteOutlined, EditOutlined, ReloadOutlined } from "@ant-design/icons";
+import { Button, Input, Tooltip, message } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import '../../dashboard.css'
+import DeleteModal from "@/components/ui/DeleteModal";
 
 
 
@@ -20,6 +21,9 @@ const ManageServices = () => {
     const [sortBy, setSortBy] = useState("");
     const [sortOrder, setSortOrder] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [deleteId, setDeleteId] = useState('')
+
 
     query["limit"] = size;
     query["page"] = page;
@@ -35,6 +39,8 @@ const ManageServices = () => {
         query["searchTerm"] = debouncedSearchTerm;
     }
 
+
+    const [deleteService] = useDeleteServiceMutation()
 
     const { data, isLoading } = useGetServicesQuery({ ...query });
 
@@ -58,6 +64,19 @@ const ManageServices = () => {
         {
             title: "Description",
             dataIndex: "description",
+            render: function (data) {
+                return (
+                    <>
+                        {
+                            data?.length > 25 ?
+                                <Tooltip placement="bottom" title={data}>
+                                    <p >{data?.slice(0, 25)} . . .</p>
+                                </Tooltip>
+                                : <p>{data}</p>
+                        }
+                    </>
+                )
+            }
         },
         {
             title: "Price",
@@ -107,7 +126,7 @@ const ManageServices = () => {
             render: function (data) {
                 return (
                     <>
-                        <Button onClick={() => console.log(data)} type="primary" danger>
+                        <Button onClick={() => { showModal(); setDeleteId(data) }} type="primary" danger>
                             <DeleteOutlined />
                         </Button>
                     </>
@@ -130,6 +149,46 @@ const ManageServices = () => {
         setSortOrder("");
         setSearchTerm("");
     };
+
+
+
+
+    const deleteHandler = async (id) => {
+        message.loading('deleting . . .')
+        try {
+
+            const res = await deleteService(id).unwrap()
+
+            if (res?.id) {
+                message.success('Service Deleted successfully')
+            } else {
+                message.error('Service Delete Failed')
+            }
+        } catch (err) {
+            console.error(err.message);
+            message.error(err.message)
+        }
+    };
+
+
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleOk = () => {
+        deleteHandler(deleteId)
+        setIsModalOpen(false);
+        setDeleteId('')
+    };
+
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
+
+
+
+
+
     return (
         <div>
             <ActionBar title="Services">
@@ -167,6 +226,20 @@ const ManageServices = () => {
                 onTableChange={onTableChange}
                 showPagination={true}
             />
+
+
+            {/* delete confirmation modal  */}
+
+            <DeleteModal
+                title="Are you sure you want to delete the Service ? "
+                subTitle="Remember once it will be deleted, you will never get it back. "
+                isModalOpen={isModalOpen}
+                handleOk={handleOk}
+                handleCancel={handleCancel}
+            />
+
+
+
         </div>
     );
 };
