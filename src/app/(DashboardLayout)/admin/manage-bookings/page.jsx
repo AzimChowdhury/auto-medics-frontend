@@ -4,6 +4,7 @@ import ReuseableTables from "@/components/ui/ReusableTables";
 import ActionBar from "@/components/ui/actionBar";
 import { useDeleteBookingsMutation, useGetBookingsQuery } from "@/redux/api/bookingsApi";
 import { useDebounced } from "@/redux/hooks";
+import { ISOStringToDate, ISOStringToTime } from "@/utils/Date";
 import { DeleteOutlined, ReloadOutlined } from "@ant-design/icons";
 import { Button, Input, message } from "antd";
 import Link from "next/link";
@@ -93,14 +94,7 @@ const ManageBookings = () => {
             title: "Booked Date",
             dataIndex: "timeSlot",
             render: function (data) {
-
-                const dateTime = new Date(data);
-
-                const day = dateTime.getDate().toString().padStart(2, '0');
-                const month = (dateTime.getMonth() + 1).toString().padStart(2, '0');
-                const year = dateTime.getFullYear();
-
-                const formattedDate = `${day}-${month}-${year}`;
+                const formattedDate = ISOStringToDate(data)
                 return (
                     <>
                         <p>{formattedDate}</p>
@@ -112,13 +106,8 @@ const ManageBookings = () => {
             title: "Booked Time",
             dataIndex: "timeSlot",
             render: function (data) {
-                const dateTime = new Date(data);
 
-                const hours = dateTime.getHours() % 12 || 12; // Convert to 12-hour format
-                const minutes = dateTime.getMinutes();
-                const ampm = dateTime.getHours() >= 12 ? 'pm' : 'am';
-
-                const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')} ${ampm}`;
+                const formattedTime = ISOStringToTime(data)
                 return (
                     <>
                         <p>{formattedTime}</p>
