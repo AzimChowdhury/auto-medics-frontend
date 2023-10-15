@@ -1,16 +1,14 @@
 'use client'
-import { Col, Row } from 'antd';
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import ReusableCard from './Card';
+import { useGetServicesQuery } from '@/redux/api/serviceApi';
+import { ArrowRightOutlined } from '@ant-design/icons';
+import Link from 'next/link';
 
 function Services() {
-    const [services, setServices] = useState([]);
-    useEffect(() => {
-        fetch('services.json')
-            .then(res => res.json())
-            .then(data => setServices(data))
-    }, []);
+
+    const { data: services } = useGetServicesQuery()
+
     return (
         <div>
             <h2 style={{
@@ -21,16 +19,45 @@ function Services() {
             }}>Our Top Services</h2>
             <div className='cardContainer'>
                 {
-                    services?.map(service => (
+                    services?.slice(0, 6)?.map(service => (
                         <ReusableCard
                             key={service.id}
                             name={service?.name}
+                            price={service?.price}
                             description={service?.description}
                             image={service?.image}
                         />
                     )
                     )
                 }
+            </div>
+
+
+            <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                padding: '20px',
+            }}>
+                <Link href="/services" style={{
+
+                    textDecoration: 'none',
+
+                }}>
+                    <button
+                        style={{
+                            fontSize: '18px',
+                            backgroundColor: "#007BFF",
+                            color: 'white',
+                            padding: "10px 20px",
+                            border: '0px solid black',
+                            borderRadius: '5px',
+                            cursor: 'pointer'
+                        }}
+
+                    >
+                        See All Services  <ArrowRightOutlined />
+                    </button>
+                </Link>
             </div>
         </div>
     )

@@ -1,35 +1,34 @@
 "use client";
 import { Button, Col, Row, message } from "antd";
-import loginImage from "../../../assets/login.png";
+import loginImage from "../../../../assets/login.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
-import './signin.css'
+import '../signin/signin.css'
 import { submitHandler } from 'react-hook-form'
-import Link from "next/link";
-import { useUserSigninMutation } from "@/redux/api/authApi";
+import { useUserSignupMutation } from "@/redux/api/authApi";
 import { setToLocalStorage } from "@/utils/local-storage";
 import { authKey } from "@/constants/storageKey";
 
 
-const LoginPage = () => {
+const SignUp = () => {
     const router = useRouter()
-    const [userSignin] = useUserSigninMutation()
+    const [userSignup] = useUserSignupMutation()
 
     const onSubmit = async (data) => {
+        data.role = 'customer'
         try {
-            const res = await userSignin(data).unwrap()
-
+            const res = await userSignup(data).unwrap()
             if (res?.accessToken) {
                 setToLocalStorage(authKey, res.accessToken)
-                message.success('user logged in successfully')
+                message.success('user signed in successfully')
                 router.push('/profile')
             } else {
-                message.error('failed to log in')
+                message.error('failed to sign in, try again')
             }
         } catch (err) {
-            console.error(err)
+            console.error(err.message)
         }
     }
 
@@ -51,19 +50,15 @@ const LoginPage = () => {
                         textAlign: 'center'
                     }}
                 >
-                    First login your account
+                    First Create your account
                 </h1>
-                <div style={{ textAlign: "center", fontSize: "16px", margin: "20px 0px" }}>
-                    <p>Does not have an account ?
-                        <Link href='/auth/signup'>
-                            sign up first
-                        </Link>
-                    </p>
-                </div>
                 <div>
                     <Form submitHandler={onSubmit}>
-                        <div>
-                            <FormInput name="email" type="text" size="large" label="Email *" />
+
+                        <div style={{
+                            margin: "15px 0px",
+                        }}>
+                            <FormInput name="email" type="email" size="large" label="Email *" required={true} />
                         </div>
                         <div
                             style={{
@@ -74,11 +69,12 @@ const LoginPage = () => {
                                 name="password"
                                 type="password"
                                 size="large"
-                                label="Password *"
+                                label=" Password *"
                             />
                         </div>
+
                         <button className="loginButton" htmlType="submit">
-                            Login
+                            Sign Up
                         </button>
                     </Form>
 
@@ -88,4 +84,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default SignUp;

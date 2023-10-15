@@ -3,7 +3,7 @@ import React from 'react'
 
 function Loading() {
     return (
-        <div>
+        <div style={{ marginTop: '15%' }}>
             <Spin tip="Loading" size="large">
                 <div className="content" />
             </Spin>

@@ -1,0 +1,17 @@
+.cardBody {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 100px
+}
+
+.cardImage {
+    width: 400px;
+    height: auto;
+
+}
+
+.cardText {
+    padding: 6px 0px;
+}

@@ -7,6 +7,8 @@ import {
     ThunderboltOutlined,
     CreditCardOutlined,
     FileTextOutlined,
+    BookOutlined,
+    CheckSquareOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
 
@@ -52,9 +54,25 @@ export const sidebarItems = (role) => {
     ];
 
 
+    const customerSidebarItems = [
+        ...defaultSidebarItems,
+        {
+            label: <Link href={`/${role}/my-bookings`}>My Bookings</Link>,
+            key: "/my-bookings",
+            icon: <BookOutlined />
+        },
+        {
+            label: <Link href={`/${role}/review`}>My Review</Link>,
+            key: "/manage-admin",
+            icon: <CheckSquareOutlined />
+        },
+
+    ];
 
 
-    if (role === 'customer') return defaultSidebarItems;
+
+
+    if (role === 'customer') return customerSidebarItems;
     else if (role === 'admin') return adminSidebarItems;
     else {
         return defaultSidebarItems;

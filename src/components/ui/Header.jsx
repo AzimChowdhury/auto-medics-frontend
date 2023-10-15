@@ -7,6 +7,7 @@ import { authKey } from "@/constants/storageKey";
 import { getUserInfo } from "@/helpers/auth/authHelper";
 import { useRouter } from "next/navigation";
 const { Header: AntHeader } = Layout;
+import dynamic from "next/dynamic";
 
 const Header = () => {
     const router = useRouter()
@@ -19,9 +20,34 @@ const Header = () => {
     };
 
     const items = [
+        {
+            key: "0",
+            label: (
+                <Link className="dropdownItem" href='/services'  >
+                    Services
+                </Link>
+            ),
+        },
+        {
+            key: "1",
+            label: (
+                <Link className="dropdownItem" href='/about-us'  >
+                    About Us
+                </Link>
+            ),
+        },
+        {
+            key: "2",
+            label: (
+                <Link className="dropdownItem" href='/profile'  >
+                    Dashboard
+                </Link>
+            ),
+        },
+
         user ?
             {
-                key: "1",
+                key: "3",
                 label: (
                     <Button onClick={logOut} type="text" danger>
                         Logout
@@ -29,13 +55,14 @@ const Header = () => {
                 ),
             } :
             {
-                key: "0",
+                key: "4",
                 label: (
                     <Link className="dropdownItem" href='/auth/signin'  >
                         Sign In
                     </Link>
                 ),
             },
+
 
 
     ];
@@ -59,15 +86,15 @@ const Header = () => {
                 }}
             >
                 <div className="header">
-                    <div>
+                    <Link href='/'>
                         <h1 className="headerText"  >AUTO-MEDICS</h1>
-                    </div>
+                    </Link>
                     <div>
                         <div className="header-menu">
                             <ul className="menu">
 
-                                <li><Link style={{ color: "white" }} href="">Services</Link></li>
-                                <li><Link style={{ color: "white" }} href="">About Us</Link></li>
+                                <li><Link style={{ color: "white" }} href="/services">Services</Link></li>
+                                <li><Link style={{ color: "white" }} href="/about-us">About Us</Link></li>
                                 <li><Link style={{ color: "white" }} href="/profile">Dashboard</Link></li>
 
 
@@ -105,4 +132,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default dynamic(() => Promise.resolve(Header), { ssr: false })
