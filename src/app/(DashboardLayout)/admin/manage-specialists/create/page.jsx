@@ -7,12 +7,12 @@ import UploadImage from '@/components/Forms/UploadImage'
 import uploadToImgbb from '@/utils/uploadToImgbb'
 import { useRouter } from 'next/navigation'
 import dynamic from "next/dynamic";
-import { useCreateAdminMutation } from '@/redux/api/authApi'
+import { useCreateSpecialistMutation } from '@/redux/api/authApi'
 
 
 function CreateSpecialist() {
     const router = useRouter()
-    const [createAdmin] = useCreateAdminMutation()
+    const [CreateSpecialist] = useCreateSpecialistMutation()
 
 
 
@@ -24,14 +24,14 @@ function CreateSpecialist() {
 
             if (res?.data?.url) {
                 const image = res.data.url
-                const { name, email, contactNo, address, password } = submitData
-                const uploadData = { name, contactNo, address, image: image, email, password }
-                const response = await createAdmin(uploadData).unwrap()
+                const { name, email, contactNo, address, password, skill } = submitData
+                const uploadData = { name, contactNo, address, image: image, email, password, skill }
+                const response = await CreateSpecialist(uploadData).unwrap()
                 if (response?.id) {
-                    message.success('Admin Created Successfully')
-                    router.push('/admin/manage-admin')
+                    message.success('Specialist Created Successfully')
+                    router.push('/admin/manage-specialists')
                 } else {
-                    message.error('failed to create admin')
+                    message.error('failed to create specialist')
                 }
             } else {
                 message.error('image upload failed')
@@ -39,12 +39,13 @@ function CreateSpecialist() {
 
         } catch (error) {
             console.log(error)
+            message.error('something went wrong')
         }
     }
     return (
         <div>
             <div className='editProfileContainer'>
-                <h1 style={{ textAlign: 'center' }}>Create Admin</h1>
+                <h1 style={{ textAlign: 'center' }}>Create Specialist</h1>
                 <Form submitHandler={onSubmit} >
                     <div className='inputDiv' >
                         <UploadImage type='file' name='file' />
@@ -58,6 +59,9 @@ function CreateSpecialist() {
                     </div>
                     <div className='inputDiv'>
                         <FormInput name='password' type="password" size="larger" label="Password" required={true} />
+                    </div>
+                    <div className='inputDiv'>
+                        <FormInput name='skill' type="text" size="larger" label="Skills" required={true} />
                     </div>
                     <div className='inputDiv'>
                         <FormInput name='contactNo' type="text" size="larger" label="Contact No" required={true} />

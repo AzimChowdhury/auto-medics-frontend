@@ -20,6 +20,14 @@ export const authApi = baseApi.injectEndpoints({
             }),
             invalidatesTags: [admin]
         }),
+        createSpecialist: build.mutation({
+            query: (data) => ({
+                url: `${AUTH_URL}/create-specialist`,
+                method: "POST",
+                data: data
+            }),
+            invalidatesTags: [admin]
+        }),
         userSignin: build.mutation({
             query: (data) => ({
                 url: `${AUTH_URL}/signin`,
@@ -34,5 +42,6 @@ export const authApi = baseApi.injectEndpoints({
 export const {
     useUserSignupMutation,
     useUserSigninMutation,
-    useCreateAdminMutation
+    useCreateAdminMutation,
+    useCreateSpecialistMutation
 } = authApi

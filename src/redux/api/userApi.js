@@ -45,7 +45,7 @@ export const userApi = baseApi.injectEndpoints({
         }),
         deleteSpecialist: build.mutation({
             query: (data) => ({
-                url: `${URL}/specialist?email=${data}`,
+                url: `${URL}/specialist?id=${data}`,
                 method: "DELETE"
             }),
             invalidatesTags: [specialist]
