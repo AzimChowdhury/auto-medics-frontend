@@ -1,5 +1,5 @@
 
-import { admin, customer, profile, specialist } from "../tag-types";
+import { admin, bookings, customer, profile, specialist } from "../tag-types";
 import { baseApi } from "./baseApi";
 
 const URL = "/users";
@@ -12,6 +12,13 @@ export const userApi = baseApi.injectEndpoints({
                 params: query
             }),
             providesTags: [customer]
+        }),
+        deleteCustomer: build.mutation({
+            query: (data) => ({
+                url: `${URL}/customer?id=${data}`,
+                method: "DELETE"
+            }),
+            invalidatesTags: [customer, bookings]
         }),
         getAdmins: build.query({
             query: (query) => ({
@@ -35,6 +42,13 @@ export const userApi = baseApi.injectEndpoints({
                 params: query
             }),
             providesTags: [specialist]
+        }),
+        deleteSpecialist: build.mutation({
+            query: (data) => ({
+                url: `${URL}/specialist?email=${data}`,
+                method: "DELETE"
+            }),
+            invalidatesTags: [specialist]
         }),
         myProfile: build.query({
             query: (query) => ({
@@ -62,5 +76,7 @@ export const {
     useGetSpecialistsQuery,
     useMyProfileQuery,
     useUpdateProfileMutation,
-    useDeleteAdminsMutation
+    useDeleteAdminsMutation,
+    useDeleteCustomerMutation,
+    useDeleteSpecialistMutation
 } = userApi

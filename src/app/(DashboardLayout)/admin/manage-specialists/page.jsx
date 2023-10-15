@@ -66,10 +66,6 @@ const ManageSpecialists = () => {
             dataIndex: "skill",
         },
         {
-            title: "Rating",
-            dataIndex: "rating",
-        },
-        {
             title: "Contact no.",
             dataIndex: "contactNo",
         },

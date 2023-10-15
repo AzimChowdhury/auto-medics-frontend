@@ -1,14 +1,15 @@
 "use client";
 import ReuseableTables from "@/components/ui/ReusableTables";
 import ActionBar from "@/components/ui/actionBar";
-import { useGetCustomersQuery } from "@/redux/api/userApi";
+import { useDeleteCustomerMutation, useGetCustomersQuery } from "@/redux/api/userApi";
 import { useDebounced } from "@/redux/hooks";
 import { DeleteOutlined, ReloadOutlined } from "@ant-design/icons";
-import { Button, Input } from "antd";
+import { Button, Input, message } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import '../../dashboard.css'
+import DeleteModal from "@/components/ui/DeleteModal";
 
 
 
@@ -19,6 +20,10 @@ const ManageCustomers = () => {
     const [sortBy, setSortBy] = useState("");
     const [sortOrder, setSortOrder] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [deleteId, setDeleteId] = useState('')
+
+
 
     query["limit"] = size;
     query["page"] = page;
@@ -33,6 +38,8 @@ const ManageCustomers = () => {
     if (!!debouncedSearchTerm) {
         query["searchTerm"] = debouncedSearchTerm;
     }
+
+    const [deleteCustomer] = useDeleteCustomerMutation()
 
     const { data, isLoading } = useGetCustomersQuery({ ...query });
 
@@ -70,12 +77,23 @@ const ManageCustomers = () => {
             dataIndex: "address",
         },
         {
+            title: "Bookings",
+            dataIndex: "Bookings",
+            render: function (data) {
+                return (
+                    <>
+                        <p>{data?.length}</p>
+                    </>
+                )
+            }
+        },
+        {
             title: "Action",
             dataIndex: "id",
             render: function (data) {
                 return (
                     <>
-                        <Button onClick={() => console.log(data)} type="primary" danger>
+                        <Button onClick={() => { showModal(); setDeleteId(data) }} type="primary" danger>
                             <DeleteOutlined />
                         </Button>
                     </>
@@ -98,6 +116,45 @@ const ManageCustomers = () => {
         setSortOrder("");
         setSearchTerm("");
     };
+
+
+
+    const deleteHandler = async (id) => {
+        message.loading('deleting . . .')
+        try {
+            const res = await deleteCustomer(id).unwrap()
+
+            if (res?.message) {
+                message.success(res?.message)
+            } else {
+                message.error('Customer Delete Failed')
+            }
+        } catch (err) {
+            console.error(err.message);
+            message.error(err.message)
+        }
+    };
+
+
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleOk = () => {
+        deleteHandler(deleteId)
+        setIsModalOpen(false);
+        setDeleteId('')
+    };
+
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
+
+
+
+
+
+
     return (
         <div>
             <ActionBar title="Customers">
@@ -133,6 +190,20 @@ const ManageCustomers = () => {
                 onTableChange={onTableChange}
                 showPagination={true}
             />
+
+
+            {/* delete confirmation modal  */}
+
+            <DeleteModal
+                title="Are you sure you want to delete the Customer and all of his bookings ? "
+                subTitle="Remember once it will be deleted, you will never get it back. "
+                isModalOpen={isModalOpen}
+                handleOk={handleOk}
+                handleCancel={handleCancel}
+            />
+
+
+
         </div>
     );
 };
