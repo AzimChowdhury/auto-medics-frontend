@@ -1,7 +1,7 @@
 'use client'
 
 import { useGetAllReviewQuery } from "@/redux/api/reviewApi"
-import { Carousel } from 'antd';
+import { Carousel, Rate } from 'antd';
 import './review.css'
 
 
@@ -27,7 +27,7 @@ function Reviews() {
                                         <p className="reviewName">{review?.customer?.name}</p>
                                     </div>
                                     <div>
-                                        <p>{review?.rating}</p>
+                                        <Rate disabled value={review?.rating} style={{ fontSize: '24px' }} />
                                         <p>{review?.comment}</p>
                                     </div>
                                 </div>

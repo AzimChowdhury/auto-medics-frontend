@@ -10,6 +10,7 @@ import { submitHandler } from 'react-hook-form'
 import { useUserSignupMutation } from "@/redux/api/authApi";
 import { setToLocalStorage } from "@/utils/local-storage";
 import { authKey } from "@/constants/storageKey";
+import Link from "next/link";
 
 
 const SignUp = () => {
@@ -41,9 +42,9 @@ const SignUp = () => {
             }}
         >
             <Col sm={12} md={16} lg={10}>
-                <Image src={loginImage} width={500} alt="login image" />
+                <Image className="loginImage" src={loginImage} width={500} alt="login image" />
             </Col>
-            <Col style={{ margin: '0px 10%' }} sm={12} md={8} lg={8}>
+            <Col className="formDiv" sm={12} md={8} lg={8}>
                 <h1
                     style={{
                         margin: "25px 0px",
@@ -52,6 +53,13 @@ const SignUp = () => {
                 >
                     First Create your account
                 </h1>
+                <div style={{ textAlign: "center", fontSize: "16px", margin: "20px 0px" }}>
+                    <p>Already have an account ?
+                        <Link href='/auth/signin'>
+                            sign in now
+                        </Link>
+                    </p>
+                </div>
                 <div>
                     <Form submitHandler={onSubmit}>
 

@@ -42,9 +42,9 @@ const LoginPage = () => {
             }}
         >
             <Col sm={12} md={16} lg={10}>
-                <Image src={loginImage} width={500} alt="login image" />
+                <Image className="loginImage" src={loginImage} width={500} alt="login image" />
             </Col>
-            <Col style={{ margin: '0px 10%' }} sm={12} md={8} lg={8}>
+            <Col className="formDiv" sm={12} md={8} lg={8}>
                 <h1
                     style={{
                         margin: "25px 0px",
