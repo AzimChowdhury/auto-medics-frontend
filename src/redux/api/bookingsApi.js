@@ -5,8 +5,8 @@ const URL = "/bookings";
 export const bookingsApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
         getBookings: build.query({
-            query: () => ({
-                url: `${URL}/all`,
+            query: (data) => ({
+                url: `${URL}?role=${data?.role}&email=${data?.email}`,
                 method: "GET",
             }),
             providesTags: [bookings]

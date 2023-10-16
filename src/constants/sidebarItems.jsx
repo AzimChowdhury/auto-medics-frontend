@@ -70,10 +70,22 @@ export const sidebarItems = (role) => {
     ];
 
 
+    const specialistSidebarItems = [
+        ...defaultSidebarItems,
+        {
+            label: <Link href={`/${role}/my-bookings`}>Bookings for me</Link>,
+            key: "/my-bookings",
+            icon: <BookOutlined />
+        },
+
+    ];
+
+
 
 
     if (role === 'customer') return customerSidebarItems;
     else if (role === 'admin') return adminSidebarItems;
+    else if (role === 'specialist') return specialistSidebarItems;
     else {
         return defaultSidebarItems;
     }
