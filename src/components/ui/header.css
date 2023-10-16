@@ -40,7 +40,7 @@
     font-size: 16px;
 }
 
-/* Styles for mobile dropdown */
+
 @media (max-width: 768px) {
     .menu {
         display: none;

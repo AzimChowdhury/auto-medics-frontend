@@ -15,7 +15,7 @@ function Reviews() {
                 What Customers Says About Us  ?
             </h1>
 
-            <Carousel autoplay style={{ width: '45%', margin: '20px auto' }} >
+            <Carousel autoplay className="reviewWidth">
 
                 {
                     data?.slice(0, 5)?.map(review => {

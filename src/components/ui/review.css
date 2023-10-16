@@ -1,3 +1,9 @@
+.reviewWidth {
+    width: 45%;
+    margin: 20px auto;
+}
+
+
 .reviewContainer {
     display: flex;
     justify-content: center;
@@ -31,4 +37,34 @@
     font-weight: 600;
     margin: 10px;
     text-align: center;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .reviewWidth {
+        width: 60%;
+        margin: 20px auto;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .reviewWidth {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .reviewContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #EDEFF6;
+        padding: 20px;
+        border: 1px solid #007BFF;
+        border-radius: 10px;
+    }
 }

@@ -15,3 +15,30 @@
 .cardText {
     padding: 6px 0px;
 }
+
+
+
+@media (max-width: 768px) {}
+
+
+@media (max-width: 480px) {
+    .cardBody {
+        margin-top: 10px;
+        display: block;
+        /* flex-direction: column; */
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 10px
+    }
+
+    .cardImage {
+        width: 90%;
+        height: auto;
+
+    }
+
+    .cardText {
+        padding: 6px 10px;
+    }
+
+}
