@@ -11,10 +11,10 @@ function Services() {
 
     return (
         <div>
-            <h2 style={{
-                color: "#007BFF",
+            <h2 className='gradientHeader' style={{
                 textAlign: 'center',
-                fontSize: "30px",
+                fontSize: "42px",
+                fontWeight: 700,
                 padding: "40px 0px"
             }}>Our Top Services</h2>
             <div className='cardContainer'>
@@ -43,18 +43,7 @@ function Services() {
                     textDecoration: 'none',
 
                 }}>
-                    <button
-                        style={{
-                            fontSize: '18px',
-                            backgroundColor: "#007BFF",
-                            color: 'white',
-                            padding: "10px 20px",
-                            border: '0px solid black',
-                            borderRadius: '5px',
-                            cursor: 'pointer'
-                        }}
-
-                    >
+                    <button className='gradientButton'  >
                         See All Services  <ArrowRightOutlined />
                     </button>
                 </Link>

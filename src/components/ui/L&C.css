@@ -1,0 +1,57 @@
+.lcContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0px;
+}
+
+.lcHeader {
+    font-size: 40px;
+    padding: 15px 0px;
+}
+
+.lcImage {
+    width: 30%;
+    height: auto;
+}
+
+.lcContent {
+    width: 30%;
+    text-align: left;
+}
+
+.wideP {
+    font-size: 20px;
+    letter-spacing: 1.3px;
+    line-height: 1.5;
+}
+
+.cs {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+    .lcContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 50px 0px;
+    }
+
+    .lcImage {
+        width: 70%;
+        height: auto;
+    }
+
+    .lcContent {
+        width: 80%;
+        text-align: center;
+    }
+
+
+}
+
+
+
+@media (max-width: 480px) {}

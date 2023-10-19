@@ -17,10 +17,6 @@
 .reviewTitle {
     text-align: center;
     font-size: 35px;
-    background: linear-gradient(90deg, #000875, #2387fa);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
     margin-top: 20px;
     margin-bottom: 20px
 }

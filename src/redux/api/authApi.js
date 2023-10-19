@@ -26,7 +26,7 @@ export const authApi = baseApi.injectEndpoints({
                 method: "POST",
                 data: data
             }),
-            invalidatesTags: [admin]
+            invalidatesTags: [specialist]
         }),
         userSignin: build.mutation({
             query: (data) => ({

@@ -5,6 +5,7 @@ export const service = 'service'
 export const bookings = 'bookings'
 export const profile = 'profile'
 export const review = 'review'
+export const notification = 'notification'
 
 export const tagTypesList = [
     "admin",
@@ -13,5 +14,6 @@ export const tagTypesList = [
     "service",
     "bookings",
     'profile',
-    "review"
+    "review",
+    "notification",
 ];

@@ -3,6 +3,7 @@
 import { useGetAllReviewQuery } from "@/redux/api/reviewApi"
 import { Carousel, Rate } from 'antd';
 import './review.css'
+import image from '../../assets/user.jpg'
 
 
 function Reviews() {
@@ -10,8 +11,8 @@ function Reviews() {
 
 
     return (
-        data && <div style={{ backgroundColor: "#EDEFF6", padding: '20px' }}>
-            <h1 className="reviewTitle">
+        data && <div style={{ backgroundColor: "#EDEFF6", padding: '40px' }}>
+            <h1 className="reviewTitle gradientHeader">
                 What Customers Says About Us  ?
             </h1>
 
@@ -23,7 +24,7 @@ function Reviews() {
                             <div key={review?.id}>
                                 <div className="reviewContainer" >
                                     <div style={{ margin: '20px' }}>
-                                        <img className="reviewImage" src={review?.customer?.image} alt="" />
+                                        <img className="reviewImage" src={review?.customer?.image ? review?.customer?.image : image} alt="" />
                                         <p className="reviewName">{review?.customer?.name}</p>
                                     </div>
                                     <div>

@@ -25,3 +25,21 @@
   background: #0056b3;
   /* Change color on hover */
 }
+
+
+.gradientButton {
+  background: linear-gradient(to right, #010657, #0151ad, #1581fd);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px 20px;
+}
+
+.gradientHeader {
+  background: linear-gradient(90deg, #010447, #0151ad, #308ffc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

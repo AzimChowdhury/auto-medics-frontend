@@ -17,8 +17,8 @@ function Banner() {
             <h1 className='bannerHeader'>AUTO MEDICS</h1>
             <div >
                 <p className='bannerSubTitles'>The best car clinic nationwide</p>
-                <p className='bannerSubTitles'> Your trusted partner in automotive care, ensuring your vehicles longevity and performance.</p>
-                <p className='bannerSubTitles'>Where your cars health is our priority, and quality service is our commitment.</p>
+                <p className='bannerSubTitles'> Your trusted partner in the automobile world</p>
+                <p className='bannerSubTitles'>Quality service is our commitment, Customer satisfaction is our priority.</p>
 
             </div>
         </div>

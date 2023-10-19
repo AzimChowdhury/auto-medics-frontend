@@ -9,6 +9,11 @@ import {
     FileTextOutlined,
     BookOutlined,
     CheckSquareOutlined,
+    BellOutlined,
+    UserOutlined,
+    CheckCircleOutlined,
+    CarryOutOutlined,
+    DeploymentUnitOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
 
@@ -29,17 +34,17 @@ export const sidebarItems = (role) => {
         {
             label: <Link href={`/${role}/manage-customers`}>Manage Customers</Link>,
             key: "/manage-customers",
-            icon: <TableOutlined />
+            icon: <UserOutlined />
         },
         {
             label: <Link href={`/${role}/manage-admin`}>Manage Admin</Link>,
             key: "/manage-admin",
-            icon: <TableOutlined />
+            icon: <CheckSquareOutlined />
         },
         {
             label: <Link href={`/${role}/manage-specialists`}>Manage Specialists</Link>,
             key: "/manage-specialists",
-            icon: <TableOutlined />
+            icon: <DeploymentUnitOutlined />
         },
         {
             label: <Link href={`/${role}/manage-services`}>Manage Services</Link>,
@@ -49,7 +54,12 @@ export const sidebarItems = (role) => {
         {
             label: <Link href={`/${role}/manage-bookings`}>Manage Bookings</Link>,
             key: "/manage-bookings",
-            icon: <TableOutlined />
+            icon: <CarryOutOutlined />
+        },
+        {
+            label: <Link href={`/${role}/notify-users`}>Notify Users</Link>,
+            key: "/notify-users",
+            icon: <BellOutlined />
         },
     ];
 

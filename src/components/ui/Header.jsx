@@ -1,6 +1,6 @@
 'use client'
-import { Avatar, Button, Col, Dropdown, Layout, Menu, Row, Space, message } from "antd";
-import { MenuFoldOutlined, UserOutlined } from "@ant-design/icons";
+import { Avatar, Badge, Button, Col, Dropdown, Layout, Menu, Row, Space, message } from "antd";
+import { BellOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import './header.css'
 import { authKey } from "@/constants/storageKey";
@@ -8,10 +8,16 @@ import { getUserInfo } from "@/helpers/auth/authHelper";
 import { useRouter } from "next/navigation";
 const { Header: AntHeader } = Layout;
 import dynamic from "next/dynamic";
+import Notification from "./Notification";
+import { useState } from "react";
+import { useGetNotificationsQuery } from "@/redux/api/notificationApi";
 
 const Header = () => {
     const router = useRouter()
     const user = getUserInfo()
+    const [open, setOpen] = useState(false);
+    const { data: notifications } = useGetNotificationsQuery(user.email)
+
 
     const logOut = () => {
         localStorage.removeItem(authKey)
@@ -36,6 +42,8 @@ const Header = () => {
                 </Link>
             ),
         },
+
+        user &&
         {
             key: "2",
             label: (
@@ -46,14 +54,16 @@ const Header = () => {
         },
 
         user ?
+
             {
                 key: "3",
                 label: (
-                    <Button onClick={logOut} type="text" danger>
+                    <Button onClick={logOut} type="primary" danger>
                         Logout
                     </Button>
                 ),
-            } :
+            }
+            :
             {
                 key: "4",
                 label: (
@@ -66,6 +76,35 @@ const Header = () => {
 
 
     ];
+
+
+    const showDrawer = () => {
+        setOpen(true);
+    };
+
+
+
+
+
+    const onClose = () => {
+        setOpen(false);
+    };
+
+
+
+    const unreadCount = notifications?.reduce((count, notification) => {
+        if (notification?.email && !notification?.readen) {
+            return count + 1;
+        } else if (notification?.readers && notification?.readers?.includes(user?.email)) {
+            return count + 1;
+        }
+        return count;
+    }, 0);
+
+
+
+
+
     return (
         <AntHeader
 
@@ -95,14 +134,27 @@ const Header = () => {
 
                                 <li><Link style={{ color: "white" }} href="/services">Services</Link></li>
                                 <li><Link style={{ color: "white" }} href="/about-us">About Us</Link></li>
-                                <li><Link style={{ color: "white" }} href="/profile">Dashboard</Link></li>
+
 
 
                                 {
                                     user ?
-                                        <li><Button onClick={logOut} type="primary" danger>
-                                            Logout
-                                        </Button></li>
+                                        <>
+                                            <li><Link style={{ color: "white" }} href="/profile">Dashboard</Link></li>
+
+                                            {
+                                                user?.role === 'customer' && <li style={{ cursor: 'pointer' }} onClick={showDrawer}>
+                                                    <Badge count={unreadCount ? unreadCount : 0}>
+                                                        <BellOutlined style={{ fontSize: '28px', color: 'white' }} />
+
+                                                    </Badge>
+                                                </li>
+                                            }
+
+                                            <li><Button onClick={logOut} type="primary" danger>
+                                                Logout
+                                            </Button></li>
+                                        </>
                                         :
 
                                         <li><Link style={{ color: "white" }} href="/auth/signin">Sign In</Link></li>
@@ -128,6 +180,7 @@ const Header = () => {
                     </div>
                 </div>
             </Row>
+            <Notification onClose={onClose} open={open} notifications={notifications} />
         </AntHeader>
     );
 };

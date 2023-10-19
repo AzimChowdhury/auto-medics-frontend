@@ -4,13 +4,16 @@ import Link from 'next/link';
 const { Footer } = Layout;
 
 function FooterComponent() {
+    const date = new Date()
+    const year = date.getFullYear()
     return (
         <Footer
             style={{
+                fontSize: '20px',
                 textAlign: 'center',
             }}
         >
-            Auto-Medics ©2023 - All rights reserved by  <Link target='_blank' href='https://azim-profile.netlify.app/'>Faijul Azim</Link>
+            Auto-Medics ©{year} - All rights reserved by  <Link style={{ fontWeight: 500 }} target='_blank' href='https://azim-profile.netlify.app/'>Faijul Azim</Link>
         </Footer>
     )
 }

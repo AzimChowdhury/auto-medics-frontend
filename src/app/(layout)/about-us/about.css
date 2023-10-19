@@ -1,0 +1,24 @@
+.gradientHeader {
+    background: linear-gradient(90deg, #010657, #0169df, #278bfd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 10px 0px;
+}
+
+.aboutContainer {
+    padding: 30px 70px;
+}
+
+p {
+    line-height: 1.5;
+    letter-spacing: 0.6px;
+}
+
+
+
+@media (max-width: 480px) {
+    .aboutContainer {
+        padding: 20px 30px;
+    }
+}

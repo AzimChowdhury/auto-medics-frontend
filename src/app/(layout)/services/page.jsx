@@ -42,6 +42,17 @@ function Services() {
 
     }
 
+
+    function disabledDate(current) {
+        const today = new Date(); // Current date and time
+        today.setHours(0, 0, 0, 0); // Set hours, minutes, seconds, and milliseconds to 0
+
+        // Disable today's date and times before the current time
+        return current && (current < today || (current.isSame(today, 'day') && current < new Date()));
+    }
+
+
+
     return (
         <div>
 
@@ -98,13 +109,13 @@ function Services() {
                         <p>Choose Date</p>
                         <DatePicker onChange={(date, dateString) => {
                             setSelectedDate(dateString)
-                        }} defaultValue={dayjs(selectedDate, dateFormatList[0])} format={dateFormatList} />
+                        }} defaultValue={dayjs(selectedDate, dateFormatList[0])} format={dateFormatList} disabledDate={disabledDate} />
                     </div>
                     <div style={{ width: "50%" }}>
                         <p>Choose Time</p>
                         <TimePicker onChange={(time, timeString) => {
                             setSelectedTime(timeString)
-                        }} defaultValue={dayjs(selectedTime, format)} format={format} />
+                        }} defaultValue={dayjs(selectedTime, format)} format={format} disabledTime={disabledDate} />
 
                     </div>
                 </div>
