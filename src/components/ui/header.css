@@ -41,6 +41,26 @@
 }
 
 
+
+
+
+.ant-switch-checked {
+    background-color: #15161a !important;
+}
+
+
+
+
+.ant-switch {
+    background-color: #d2d2d3;
+}
+
+
+
+
+
+
+
 @media (max-width: 768px) {
     .menu {
         display: none;

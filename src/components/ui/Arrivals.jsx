@@ -1,9 +1,12 @@
+'use client'
 import './about.css'
+import { useSelector } from 'react-redux';
 
 function Arrivals() {
+    const darkTheme = useSelector((state) => state.darkTheme);
     return (
         <div>
-            <div className='aboutContainer'>
+            <div className={`aboutContainer ${darkTheme ? 'darkBg2' : 'lightBg2'}`}>
                 <img className='aboutImage' src="https://i.ibb.co/Q9gStNN/car-wash-tech-1000x600.jpg" alt="" />
                 <div className='aboutBody'>
                     <h1 style={{ fontSize: '35px', margin: '15px 0px' }} className='aboutHeader gradientHeader'>New Arrivals</h1>

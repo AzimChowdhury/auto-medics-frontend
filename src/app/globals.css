@@ -43,3 +43,22 @@
   background-clip: text;
   color: transparent;
 }
+
+.darkBg1 {
+  background-color: #141417;
+  color: #d0d1d4;
+}
+
+.darkBg2 {
+  background-color: #0F0F11;
+  color: #d0d1d4;
+}
+
+.lightBg1 {
+  background-color: #FFFFFF;
+}
+
+.lightBg2 {
+  background-color: #EDEFF6;
+  color: black;
+}

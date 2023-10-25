@@ -1,9 +1,12 @@
+'use client'
 /* eslint-disable react/no-unescaped-entities */
 import './L&C.css'
+import { useSelector } from 'react-redux';
 
 function Contact() {
+    const darkTheme = useSelector((state) => state.darkTheme);
     return (
-        <div style={{ backgroundColor: "#EDEFF6" }} className='lcContainer cs'>
+        <div className={`lcContainer cs ${darkTheme ? 'darkBg2' : 'lightBg2'}`}>
             <img className='lcImage' src="https://i.ibb.co/zX61VtX/image.png" alt="" />
             <div className='lcContent'>
                 <h1 className='gradientHeader lcHeader'>Don't be shy Contact us anytime</h1>

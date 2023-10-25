@@ -4,14 +4,16 @@ import { useGetAllReviewQuery } from "@/redux/api/reviewApi"
 import { Carousel, Rate } from 'antd';
 import './review.css'
 import image from '../../assets/user.jpg'
+import { useSelector } from 'react-redux';
 
 
 function Reviews() {
     const { data } = useGetAllReviewQuery()
+    const darkTheme = useSelector((state) => state.darkTheme);
 
 
     return (
-        data && <div style={{ backgroundColor: "#EDEFF6", padding: '40px' }}>
+        data && <div className={`${darkTheme ? 'darkBg2' : 'lightBg2'}`} style={{ padding: '40px' }}>
             <h1 className="reviewTitle gradientHeader">
                 What Customers Says About Us  ?
             </h1>

@@ -1,4 +1,4 @@
-import { bookings, customer, service, specialist } from "../tag-types";
+import { bookings, customer, service, specialist, notification } from "../tag-types";
 import { baseApi } from "./baseApi";
 
 const URL = "/bookings";
@@ -17,7 +17,7 @@ export const bookingsApi = baseApi.injectEndpoints({
                 method: "POST",
                 data
             }),
-            invalidatesTags: [bookings, service, customer, specialist]
+            invalidatesTags: [bookings, service, customer, specialist, notification]
         }),
         deleteBookings: build.mutation({
             query: (id) => ({

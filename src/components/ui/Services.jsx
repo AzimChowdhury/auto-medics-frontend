@@ -4,13 +4,15 @@ import ReusableCard from './Card';
 import { useGetServicesQuery } from '@/redux/api/serviceApi';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
 
 function Services() {
 
     const { data: services } = useGetServicesQuery()
+    const darkTheme = useSelector((state) => state.darkTheme);
 
     return (
-        <div>
+        <div className={`${darkTheme ? 'darkBg1' : 'lightBg1'}`}>
             <h2 className='gradientHeader' style={{
                 textAlign: 'center',
                 fontSize: "42px",

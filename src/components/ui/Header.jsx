@@ -1,6 +1,6 @@
 'use client'
-import { Avatar, Badge, Button, Col, Dropdown, Layout, Menu, Row, Space, message } from "antd";
-import { BellOutlined, MenuFoldOutlined } from "@ant-design/icons";
+import { Avatar, Badge, Button, Col, Dropdown, Layout, Menu, Row, Space, Switch, message } from "antd";
+import { BellOutlined, BellTwoTone, MenuFoldOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import './header.css'
 import { authKey } from "@/constants/storageKey";
@@ -11,19 +11,52 @@ import dynamic from "next/dynamic";
 import Notification from "./Notification";
 import { useState } from "react";
 import { useGetNotificationsQuery } from "@/redux/api/notificationApi";
+import { useDispatch } from 'react-redux';
+import { switchTheme } from "@/redux/reducers/themeSlice";
 
 const Header = () => {
     const router = useRouter()
     const user = getUserInfo()
     const [open, setOpen] = useState(false);
     const { data: notifications } = useGetNotificationsQuery(user.email)
-
+    const dispatch = useDispatch();
 
     const logOut = () => {
         localStorage.removeItem(authKey)
         message.success('log out successful')
         router.push('/auth/signin')
     };
+
+
+
+
+    const showDrawer = () => {
+        setOpen(true);
+    };
+
+
+
+
+
+    const onClose = () => {
+        setOpen(false);
+    };
+
+
+
+    const unreadCount = notifications?.reduce((count, notification) => {
+        if (notification?.email && !notification?.readen) {
+            return count + 1;
+        } else if (notification?.readers && notification?.readers?.includes(user?.email)) {
+            return count + 1;
+        }
+        return count;
+    }, 0);
+
+
+
+
+
 
     const items = [
         {
@@ -53,10 +86,25 @@ const Header = () => {
             ),
         },
 
+
+        user?.role === 'customer' &&
+        {
+            key: '3', label: (
+                <li style={{ cursor: 'pointer' }} onClick={showDrawer}>
+                    <Badge count={unreadCount ? unreadCount : 0}>
+                        <BellTwoTone style={{ fontSize: '28px', color: 'white' }} />
+
+                    </Badge>
+                </li>
+            )
+        },
+
+
+
         user ?
 
             {
-                key: "3",
+                key: "4",
                 label: (
                     <Button onClick={logOut} type="primary" danger>
                         Logout
@@ -65,7 +113,7 @@ const Header = () => {
             }
             :
             {
-                key: "4",
+                key: "5",
                 label: (
                     <Link className="dropdownItem" href='/auth/signin'  >
                         Sign In
@@ -78,31 +126,10 @@ const Header = () => {
     ];
 
 
-    const showDrawer = () => {
-        setOpen(true);
+    const onChange = (checked) => {
+        dispatch(switchTheme())
+
     };
-
-
-
-
-
-    const onClose = () => {
-        setOpen(false);
-    };
-
-
-
-    const unreadCount = notifications?.reduce((count, notification) => {
-        if (notification?.email && !notification?.readen) {
-            return count + 1;
-        } else if (notification?.readers && notification?.readers?.includes(user?.email)) {
-            return count + 1;
-        }
-        return count;
-    }, 0);
-
-
-
 
 
     return (
@@ -158,7 +185,9 @@ const Header = () => {
                                         :
 
                                         <li><Link style={{ color: "white" }} href="/auth/signin">Sign In</Link></li>
+
                                 }
+                                <li><Switch onChange={onChange} /></li>
 
                             </ul>
 

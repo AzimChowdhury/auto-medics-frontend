@@ -1,9 +1,14 @@
+'use client'
 import Link from 'next/link'
 import './about.css'
+import { useSelector } from 'react-redux';
 
 function About() {
+    const darkTheme = useSelector((state) => state.darkTheme);
+
+
     return (
-        <div className="aboutContainer">
+        <div className={`aboutContainer ${darkTheme ? 'darkBg2' : 'lightBg2'}`}>
             <img className='aboutImage' src="https://i.ibb.co/ynVyDC3/F0331238-Car-service-centre.jpg" alt="" />
             <div className='aboutBody'>
                 <p className='aboutHeader gradientHeader'>Who are we ?</p>

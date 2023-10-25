@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useState } from "react";
 import '../../dashboard.css'
 import DeleteModal from "@/components/ui/DeleteModal";
+import defaultUser from '../../../../assets/user.jpg'
 
 
 
@@ -54,7 +55,7 @@ const ManageCustomers = () => {
             render: function (data) {
                 return (
                     <>
-                        <Image className="tableImage" src={data} alt="user" width={100} height={100} />
+                        <Image className="tableImage" src={data ? data : 'https://i.ibb.co/bKFD248/user.png'} alt="user" width={100} height={100} />
                     </>
                 );
             },
