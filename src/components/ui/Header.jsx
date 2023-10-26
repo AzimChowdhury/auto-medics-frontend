@@ -14,6 +14,8 @@ import { useGetNotificationsQuery } from "@/redux/api/notificationApi";
 import { useDispatch } from 'react-redux';
 import { switchTheme } from "@/redux/reducers/themeSlice";
 
+
+
 const Header = () => {
     const router = useRouter()
     const user = getUserInfo()
@@ -127,9 +129,19 @@ const Header = () => {
 
 
     const onChange = (checked) => {
-        dispatch(switchTheme())
+        let initialState = JSON.parse(localStorage.getItem('darkTheme'))
+        if (initialState === null) {
+            localStorage.setItem('darkTheme', false)
+        }
+
+        dispatch(switchTheme(initialState))
+        localStorage.setItem('darkTheme', !initialState)
+
+
 
     };
+
+    const checked = JSON.parse(localStorage.getItem('darkTheme'))
 
 
     return (
@@ -187,7 +199,7 @@ const Header = () => {
                                         <li><Link style={{ color: "white" }} href="/auth/signin">Sign In</Link></li>
 
                                 }
-                                <li><Switch onChange={onChange} /></li>
+                                {/* <li><Switch defaultChecked={checked} onChange={onChange} /></li> */}
 
                             </ul>
 

@@ -11,3 +11,9 @@ export const getFromLocalStorage = (key) => {
   }
   return localStorage.getItem(key);
 };
+
+
+export const parser = async (data) => {
+  const parsedData = await JSON.parse(data)
+  return parsedData
+}

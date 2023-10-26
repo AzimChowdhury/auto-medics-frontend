@@ -24,7 +24,7 @@ function Reviews() {
                     data?.slice(0, 5)?.map(review => {
                         return (
                             <div key={review?.id}>
-                                <div className="reviewContainer" >
+                                <div className={`reviewContainer ${darkTheme ? 'darkBg1' : 'lightBg1'}`} >
                                     <div style={{ margin: '20px' }}>
                                         <img className="reviewImage" src={review?.customer?.image ? review?.customer?.image : image} alt="" />
                                         <p className="reviewName">{review?.customer?.name}</p>

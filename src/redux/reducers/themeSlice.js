@@ -1,11 +1,16 @@
+import { getFromLocalStorage, parser } from '@/utils/local-storage';
 import { createSlice } from '@reduxjs/toolkit';
+
+const savedDarkTheme = getFromLocalStorage('darkTheme');
+
+savedDarkTheme && parser(savedDarkTheme)
 
 const themeSlice = createSlice({
     name: 'darkTheme',
-    initialState: false,
+    initialState: savedDarkTheme ? savedDarkTheme : false,
     reducers: {
         switchTheme: (state) => {
-            return !state
+            return !state;
         }
     },
 });

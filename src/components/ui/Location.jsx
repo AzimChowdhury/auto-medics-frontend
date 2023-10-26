@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux';
 
 function Location() {
     const darkTheme = useSelector((state) => state.darkTheme);
+
+
     return (
         <div className={`lcContainer ${darkTheme ? 'darkBg1' : 'lightBg1'}`}>
             <img className='lcImage' src="https://i.ibb.co/GMVTFMM/map-with-location-pin-vector.jpg" alt="" />

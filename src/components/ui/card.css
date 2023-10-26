@@ -8,7 +8,7 @@
 
 .cardStyle {
     width: 300px;
-    background-color: rgb(245, 249, 253);
+    /* background-color: rgb(245, 249, 253); */
     border: 2px solid #007BFF;
     border-radius: 20px;
     padding: 10px;
