@@ -7,6 +7,10 @@ import dayjs from 'dayjs';
 import { convertToISOString, getCurrentTime, getTomorrowsDate } from '@/utils/Date';
 import { getUserInfo } from '@/helpers/auth/authHelper';
 import { useCreateBookingsMutation } from '@/redux/api/bookingsApi';
+import { useSelector } from 'react-redux';
+import dynamic from 'next/dynamic';
+
+
 
 function Services() {
     const { data: services } = useGetServicesQuery()
@@ -19,6 +23,7 @@ function Services() {
     const format = 'HH:mm';
     const dateFormatList = ['DD-MM-YYYY'];
     const { email } = getUserInfo()
+    const darkTheme = useSelector((state) => state.darkTheme);
 
     const [createBookings] = useCreateBookingsMutation()
 
@@ -57,9 +62,9 @@ function Services() {
         <div>
 
             <div style={{ minHeight: '80vh' }}>
-                <div style={{ textAlign: 'center', margin: '20px 0px' }}>
-                    <h1 style={{ color: '#007BFF', marginBottom: '10px' }}>Our Services</h1>
-                    <h3 style={{ color: '#1f1e1e' }}>We provide best quality services nationwide !</h3>
+                <div className={` ${JSON.parse(darkTheme) ? 'darkBg2' : 'lightBg2'}`} style={{ textAlign: 'center' }}>
+                    <h1 style={{ color: '#007BFF', padding: '20px' }}>Our Services</h1>
+
 
                     <div>
                         {services?.map((service, index) => {
@@ -124,4 +129,4 @@ function Services() {
     )
 }
 
-export default Services
+export default dynamic(() => Promise.resolve(Services), { ssr: false })

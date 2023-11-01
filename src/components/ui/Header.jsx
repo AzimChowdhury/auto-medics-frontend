@@ -136,7 +136,7 @@ const Header = () => {
 
         dispatch(switchTheme(initialState))
         localStorage.setItem('darkTheme', !initialState)
-
+        router.push('/')
 
 
     };
@@ -199,7 +199,7 @@ const Header = () => {
                                         <li><Link style={{ color: "white" }} href="/auth/signin">Sign In</Link></li>
 
                                 }
-                                {/* <li><Switch defaultChecked={checked} onChange={onChange} /></li> */}
+                                <li><Switch defaultChecked={checked} onChange={onChange} /></li>
 
                             </ul>
 

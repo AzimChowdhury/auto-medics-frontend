@@ -5,6 +5,7 @@ import { useGetServicesQuery } from '@/redux/api/serviceApi';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
+import dynamic from 'next/dynamic';
 
 function Services() {
 
@@ -12,7 +13,7 @@ function Services() {
     const darkTheme = useSelector((state) => state.darkTheme);
 
     return (
-        <div className={`${darkTheme ? 'darkBg1' : 'lightBg1'}`}>
+        <div className={`${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`} style={{ padding: '50px 0px' }}>
             <h2 className='gradientHeader' style={{
                 textAlign: 'center',
                 fontSize: "42px",
@@ -41,7 +42,7 @@ function Services() {
                 padding: '20px',
             }}>
                 <Link href="/services" style={{
-
+                    padding: '20px 0px',
                     textDecoration: 'none',
 
                 }}>
@@ -54,4 +55,4 @@ function Services() {
     )
 }
 
-export default Services
+export default dynamic(() => Promise.resolve(Services), { ssr: false })

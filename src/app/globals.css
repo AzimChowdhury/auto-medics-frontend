@@ -5,6 +5,12 @@
   padding: 0;
   margin: 0;
   font-family: 'Rubik', sans-serif;
+
+}
+
+body {
+  max-width: 1600px;
+  margin: 0px auto;
 }
 
 /* Define custom scrollbar styles */
@@ -45,12 +51,12 @@
 }
 
 .darkBg1 {
-  background-color: #141417;
+  background-color: #131316;
   color: #d0d1d4;
 }
 
 .darkBg2 {
-  background-color: #0F0F11;
+  background-color: #0a0a0c;
   color: #d0d1d4;
 }
 

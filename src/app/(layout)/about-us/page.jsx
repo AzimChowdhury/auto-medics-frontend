@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic'
-import './about.css'
+import './about-us.css'
 
 function AboutUs() {
     return (
-        <div className='aboutContainer'>
+        <div className='aboutContainer2'>
             <h1 style={{ fontSize: '35px', textAlign: 'center' }} className='gradientHeader'>About Us</h1>
 
             <h3 className='gradientHeader'>Auto-Medics : Your Trusted Car Care Partner </h3>

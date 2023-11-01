@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const savedDarkTheme = getFromLocalStorage('darkTheme');
 
 savedDarkTheme && parser(savedDarkTheme)
-
+// console.log(savedDarkTheme)
 const themeSlice = createSlice({
     name: 'darkTheme',
     initialState: savedDarkTheme ? savedDarkTheme : false,

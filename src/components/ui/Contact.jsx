@@ -2,11 +2,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import './L&C.css'
 import { useSelector } from 'react-redux';
+import dynamic from 'next/dynamic';
 
 function Contact() {
     const darkTheme = useSelector((state) => state.darkTheme);
     return (
-        <div className={`lcContainer cs ${darkTheme ? 'darkBg2' : 'lightBg2'}`}>
+        <div className={`lcContainer cs ${JSON.parse(darkTheme) ? 'darkBg2' : 'lightBg2'}`}>
             <img className='lcImage' src="https://i.ibb.co/zX61VtX/image.png" alt="" />
             <div className='lcContent'>
                 <h1 className='gradientHeader lcHeader'>Don't be shy Contact us anytime</h1>
@@ -19,4 +20,4 @@ function Contact() {
     )
 }
 
-export default Contact
+export default dynamic(() => Promise.resolve(Contact), { ssr: false })

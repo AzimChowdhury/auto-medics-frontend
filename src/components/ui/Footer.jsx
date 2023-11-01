@@ -2,6 +2,7 @@
 import { Layout } from 'antd';
 import Link from 'next/link';
 const { Footer } = Layout;
+import dynamic from 'next/dynamic';
 
 function FooterComponent() {
     const date = new Date()
@@ -9,7 +10,8 @@ function FooterComponent() {
     return (
         <Footer
             style={{
-                fontSize: '20px',
+                padding: '30px 0px',
+                fontSize: '18px',
                 textAlign: 'center',
             }}
         >
@@ -18,4 +20,4 @@ function FooterComponent() {
     )
 }
 
-export default FooterComponent
+export default dynamic(() => Promise.resolve(FooterComponent), { ssr: false })

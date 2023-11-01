@@ -6,7 +6,7 @@
     padding: 10px 0px;
 }
 
-.aboutContainer {
+.aboutContainer2 {
     padding: 30px 70px;
 }
 
@@ -18,7 +18,7 @@ p {
 
 
 @media (max-width: 480px) {
-    .aboutContainer {
+    .aboutContainer2 {
         padding: 20px 30px;
     }
 }

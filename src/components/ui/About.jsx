@@ -1,14 +1,16 @@
 'use client'
 import Link from 'next/link'
-import './about.css'
+import './compo-about.css'
 import { useSelector } from 'react-redux';
+import dynamic from 'next/dynamic';
 
 function About() {
     const darkTheme = useSelector((state) => state.darkTheme);
 
 
+
     return (
-        <div className={`aboutContainer ${darkTheme ? 'darkBg2' : 'lightBg2'}`}>
+        <div className={`aboutContainer ${JSON.parse(darkTheme) ? 'darkBg2' : 'lightBg2'}`}>
             <img className='aboutImage' src="https://i.ibb.co/ynVyDC3/F0331238-Car-service-centre.jpg" alt="" />
             <div className='aboutBody'>
                 <p className='aboutHeader gradientHeader'>Who are we ?</p>
@@ -22,4 +24,4 @@ function About() {
     )
 }
 
-export default About
+export default dynamic(() => Promise.resolve(About), { ssr: false })

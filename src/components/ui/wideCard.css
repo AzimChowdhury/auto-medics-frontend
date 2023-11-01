@@ -3,10 +3,10 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 50px 100px
+    padding: 100px 100px
 }
 
-.cardImage {
+.cardImage2 {
     width: 400px;
     height: auto;
 
@@ -31,7 +31,7 @@
         padding: 10px 10px
     }
 
-    .cardImage {
+    .cardImage2 {
         width: 90%;
         height: auto;
 

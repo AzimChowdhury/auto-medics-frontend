@@ -2,15 +2,24 @@ import { Button } from 'antd'
 import './wideCard.css'
 import { getUserInfo } from '@/helpers/auth/authHelper';
 import { useRouter } from 'next/navigation';
+import { useSelector } from 'react-redux';
 
 function WideCards({ index, image, name, description, price, time, setIsModalOpen, setService, id }) {
     const router = useRouter()
     const { email, role } = getUserInfo()
-
+    const darkTheme = useSelector((state) => state.darkTheme);
+    console.log(index, index % 2)
     return (
-        <div style={(index % 2) ? { backgroundColor: "#e1e2e3", flexDirection: 'row-reverse' } : {}} className='cardBody' >
+        <div
+            style={(index % 2) ? { flexDirection: 'row-reverse' } : {}}
+            className={
+                JSON.parse(darkTheme) ?
+                    ((index % 2) ? 'cardBody darkBg1' : 'cardBody darkBg2')
+                    :
+                    ((index % 2) ? 'cardBody lightBg1' : 'cardBody lightBg2')}
+        >
             <div>
-                <img className='cardImage' src={image} alt='services' />
+                <img className='cardImage2' src={image} alt='services' />
             </div>
             <div>
                 <h1 style={{ color: '#007BFF' }} className='cardText'>{name}</h1>

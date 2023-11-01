@@ -1,12 +1,12 @@
 'use client'
 import dynamic from 'next/dynamic'
-import './about.css'
+import './compo-about.css'
 import { useSelector } from 'react-redux';
 
 function News() {
     const darkTheme = useSelector((state) => state.darkTheme);
     return (
-        <div className={`${darkTheme ? 'darkBg1' : 'lightBg1'}`}>
+        <div className={`${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`} style={{ padding: "30px 0px" }}>
             <h1 style={{ textAlign: 'center', paddingTop: '50px', zIndex: '99' }} className='aboutHeader gradientHeader'>Latest News of AutoMobile Industry</h1>
             <div style={{ marginTop: '-10px' }} className='aboutContainer'>
                 <img className='aboutImage' src="https://i.ibb.co/0jF8Q3y/fs19-dl-garageofthefuture-850.jpg" alt="" />

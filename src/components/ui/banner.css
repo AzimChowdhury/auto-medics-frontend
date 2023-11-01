@@ -2,26 +2,26 @@
     text-align: center;
     padding-top: 100px;
     font-size: 50px;
-    text-shadow:
+    /* text-shadow:
         0 0 5px #000,
         0 0 10px #000,
         0 0 20px #000,
         0 0 30px #000,
         0 0 40px #000,
-        0 0 50px #000;
+        0 0 50px #000; */
 }
 
 .bannerSubTitles {
     text-align: center;
     padding-top: 20px;
     font-size: 25px;
-    text-shadow:
+    /* text-shadow:
         0 0 5px #000,
         0 0 10px #000,
         0 0 20px #000,
         0 0 30px #000,
         0 0 40px #000,
-        0 0 50px #000;
+        0 0 50px #000; */
 }
 
 @media (max-width: 768px) {
