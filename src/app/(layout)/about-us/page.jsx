@@ -1,24 +1,30 @@
+'use client'
 import dynamic from 'next/dynamic'
 import './about-us.css'
+import { useSelector } from 'react-redux';
+
 
 function AboutUs() {
+
+    const darkTheme = useSelector((state) => state.darkTheme);
+
     return (
-        <div className='aboutContainer2'>
+        <div className={`aboutContainer2 ${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`}>
             <h1 style={{ fontSize: '35px', textAlign: 'center' }} className='gradientHeader'>About Us</h1>
 
-            <h3 className='gradientHeader'>Auto-Medics : Your Trusted Car Care Partner </h3>
+            <h3 style={{ color: '#046CE1', fontSize: '18px', padding: '10px 0px' }}>Auto-Medics : Your Trusted Car Care Partner </h3>
 
             <p>At Auto-Medics, we are more than just a car servicing center in Chittagong. We are your dedicated automotive solutions partner, committed to providing top-notch services and expertise that keep your vehicle running smoothly. With a passion for automobiles and a mission to exceed your expectations, we have been serving the local community for 5 years. </p>
 
-            <h3 className='gradientHeader'>Our Mission</h3>
+            <h3 style={{ color: '#046CE1', fontSize: '18px', padding: '10px 0px' }}>Our Mission</h3>
 
             <p> Our mission is simple: to offer comprehensive car services and solutions for all your automobile problems, all under one roof. We understand the importance of your vehicle in your daily life and are dedicated to ensuring it operates at its best. Whether it is a routine checkup, complex repairs, or customized solutions, Auto-Medics is here to keep you on the road safely and efficiently.</p>
 
-            <h3 className='gradientHeader'>Our Team</h3>
+            <h3 style={{ color: '#046CE1', fontSize: '18px', padding: '10px 0px' }}>Our Team</h3>
 
             <p>Our team of skilled and certified technicians is the backbone of Auto-Medics. They are not just experts in their field, but they share a deep love for automobiles. Their commitment to staying updated with the latest automotive technologies and their dedication to delivering top-quality service sets us apart.</p>
 
-            <h3 className='gradientHeader'>Our Services</h3>
+            <h3 style={{ color: '#046CE1', fontSize: '18px', padding: '10px 0px' }}>Our Services</h3>
 
             <p>
                 <ul>Auto-Medics offers a wide range of services, including:
@@ -30,7 +36,7 @@ function AboutUs() {
                 </ul>
             </p>
 
-            <h3 className='gradientHeader'>Why Choose Us?</h3>
+            <h3 style={{ color: '#046CE1', fontSize: '18px', padding: '10px 0px' }}>Why Choose Us?</h3>
 
             <p>
                 <ul>
@@ -50,13 +56,13 @@ function AboutUs() {
                 </ul>
             </p>
 
-            <h3 className='gradientHeader'>    Our Location</h3>
+            <h3 style={{ color: '#046CE1', fontSize: '18px', padding: '10px 0px' }}>    Our Location</h3>
 
             <p>
                 Conveniently situated in Chittagong, our service center is easily accessible. Feel free to visit us at 46/5 Agrabad and experience our commitment to automotive excellence.
             </p>
 
-            <h3 className='gradientHeader'>Contact Us</h3>
+            <h3 style={{ color: '#046CE1', fontSize: '18px', padding: '10px 0px' }}>Contact Us</h3>
 
             <p> For all your car service needs, Auto-Medics is your trusted partner. Contact us at auto-medics@gmail.com or book your appointment through this website. We look forward to taking care of your vehicle and ensuring your peace of mind on the road.</p>
 

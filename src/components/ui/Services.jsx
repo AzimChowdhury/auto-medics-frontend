@@ -14,12 +14,12 @@ function Services() {
 
     return (
         <div className={`${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`} style={{ padding: '50px 0px' }}>
-            <h2 className='gradientHeader' style={{
+            <h1 className='gradientHeader' style={{
                 textAlign: 'center',
                 fontSize: "42px",
                 fontWeight: 700,
                 padding: "40px 0px"
-            }}>Our Top Services</h2>
+            }}>Our Top Services</h1>
             <div className='cardContainer'>
                 {
                     services?.slice(0, 6)?.map(service => (

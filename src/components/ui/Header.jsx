@@ -30,6 +30,19 @@ const Header = () => {
     };
 
 
+    const onChange = (checked) => {
+        let initialState = JSON.parse(localStorage.getItem('darkTheme'))
+        if (initialState === null) {
+            localStorage.setItem('darkTheme', false)
+        }
+
+        dispatch(switchTheme(initialState))
+        localStorage.setItem('darkTheme', !initialState)
+        router.push('/')
+
+
+    };
+
 
 
     const showDrawer = () => {
@@ -56,7 +69,7 @@ const Header = () => {
     }, 0);
 
 
-
+    const checked = JSON.parse(localStorage.getItem('darkTheme'))
 
 
 
@@ -122,26 +135,18 @@ const Header = () => {
                     </Link>
                 ),
             },
-
+        {
+            key: "6",
+            label: (
+                <li><Switch defaultChecked={checked} onChange={onChange} /></li>
+            )
+        }
 
 
     ];
 
 
-    const onChange = (checked) => {
-        let initialState = JSON.parse(localStorage.getItem('darkTheme'))
-        if (initialState === null) {
-            localStorage.setItem('darkTheme', false)
-        }
 
-        dispatch(switchTheme(initialState))
-        localStorage.setItem('darkTheme', !initialState)
-        router.push('/')
-
-
-    };
-
-    const checked = JSON.parse(localStorage.getItem('darkTheme'))
 
 
     return (

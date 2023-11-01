@@ -11,11 +11,14 @@ import Link from "next/link";
 import { useUserSigninMutation } from "@/redux/api/authApi";
 import { setToLocalStorage } from "@/utils/local-storage";
 import { authKey } from "@/constants/storageKey";
+import { useSelector } from "react-redux";
+import dynamic from "next/dynamic";
 
 
 const LoginPage = () => {
     const router = useRouter()
     const [userSignin] = useUserSigninMutation()
+    const darkTheme = useSelector((state) => state.darkTheme);
 
     const onSubmit = async (data) => {
         try {
@@ -35,6 +38,7 @@ const LoginPage = () => {
 
     return (
         <Row
+            className={`${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`}
             justify="center"
             align="middle"
             style={{
@@ -45,8 +49,9 @@ const LoginPage = () => {
                 <Image className="loginImage" src={loginImage} width={500} alt="login image" />
             </Col>
             <Col className="formDiv" sm={12} md={8} lg={8}>
-                <h1
+                <h1 className="gradientHeader"
                     style={{
+                        // color: '#046CE1',
                         margin: "25px 0px",
                         textAlign: 'center'
                     }}
@@ -77,7 +82,7 @@ const LoginPage = () => {
                                 label="Password *"
                             />
                         </div>
-                        <button className="loginButton" htmlType="submit">
+                        <button className="loginButton gradientButton" htmlType="submit">
                             Login
                         </button>
                     </Form>
@@ -88,4 +93,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default dynamic(() => Promise.resolve(LoginPage), { ssr: false })
