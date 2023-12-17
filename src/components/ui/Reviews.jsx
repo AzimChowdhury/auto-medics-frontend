@@ -6,10 +6,11 @@ import './review.css'
 import image from '../../assets/user.jpg'
 import { useSelector } from 'react-redux';
 import dynamic from "next/dynamic";
+import Loading from "@/app/loading";
 
 
 function Reviews() {
-    const { data } = useGetAllReviewQuery()
+    const { data, isLoading } = useGetAllReviewQuery()
     const darkTheme = useSelector((state) => state.darkTheme);
 
 
@@ -22,7 +23,10 @@ function Reviews() {
             <Carousel autoplay className="reviewWidth">
 
                 {
-                    data?.slice(0, 5)?.map(review => {
+                    isLoading && <Loading />
+                }
+                {
+                    data?.slice(0, 7)?.map(review => {
                         return (
                             <div key={review?.id}>
                                 <div className={`reviewContainer ${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`} >
