@@ -44,7 +44,7 @@ body {
 }
 
 .gradientHeader {
-  background: linear-gradient(90deg, #01088d, #0e6dda, #59a4fa);
+  background: linear-gradient(90deg, #01088d, #0e6dda, #5fa8fc);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
