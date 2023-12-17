@@ -13,7 +13,7 @@ function FooterComponent() {
         <Footer
             className={`${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`}
             style={{
-                padding: '30px 0px',
+                padding: '30px 30px',
                 fontSize: '18px',
                 textAlign: 'center',
             }}

@@ -62,4 +62,22 @@
     .cs {
         display: block;
     }
+
+    .lcContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0px;
+    }
+
+    .lcImage {
+        width: 80%;
+        height: auto;
+    }
+
+    .lcContent {
+        width: 90%;
+        text-align: center;
+    }
 }
