@@ -1,36 +1,41 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# AutoMedics
 
-First, run the development server:
+### Car service booking application
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### [live_url](https://auto-medics.vercel.app) - [frontend_code](https://github.com/AzimChowdhury/auto-medics-frontend) - [backend_code](https://github.com/AzimChowdhury/auto-medics-backend)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### project description
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Auto-Medics is a car service booking application where registered user can book any service with their suitable date and time. Auto-Medics has different dashboard for admins, customers and specialists. Where customers can manage all of his bookings and update profile data and can give review to this application. Admins also manage all the users, specialists, services and bookings very easily in dashboard. Whenever customer books a services customer got an confirmation notification and email. Admins and specialist are also notified with email. Admin can manually push any notification for any offer or notice.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### tech description
 
-## Learn More
+Frontend
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js
+- Redux-Toolkit
+- Ant Design
+- React Hook Form
+- Axios
+- JWT
+- Framer Motion
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Backend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Express.js
+- PostgreSQL
+- Prisma
+- JWT
+- Bcrypt
+- Cors
+- dotenv
+- zod
+- nodemailer
 
-## Deploy on Vercel
+### Contact with me
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For any query, feedback, review or suggestion contact with me via
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### Email - faijul.azim.360@gmail.com - [WhatsApp](https://api.whatsapp.com/send?phone=8801585449223) - [LinkedIn](https://www.linkedin.com/in/faijul-azim)
