@@ -7,7 +7,7 @@ import News from '@/components/ui/News'
 import Notification from '@/components/ui/Notification'
 import Reviews from '@/components/ui/Reviews'
 import Services from '@/components/ui/Services'
-import Loading from '@/components/ui/loading'
+import LoadingSpinner from '@/components/ui/loading'
 import React from 'react'
 
 
@@ -18,7 +18,6 @@ function HomePage() {
     return (
         <div>
             <Banner />
-            <Loading />
             <About />
             <Services />
             <Arrivals />
