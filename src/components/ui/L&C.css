@@ -31,6 +31,10 @@
 }
 
 @media (max-width: 768px) {
+    .cs {
+        display: block;
+    }
+
     .lcContainer {
         display: flex;
         flex-direction: column;
@@ -54,4 +58,8 @@
 
 
 
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+    .cs {
+        display: block;
+    }
+}
