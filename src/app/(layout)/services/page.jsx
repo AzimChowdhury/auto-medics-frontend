@@ -9,11 +9,12 @@ import { getUserInfo } from '@/helpers/auth/authHelper';
 import { useCreateBookingsMutation } from '@/redux/api/bookingsApi';
 import { useSelector } from 'react-redux';
 import dynamic from 'next/dynamic';
+import Loading from '@/app/loading';
 
 
 
 function Services() {
-    const { data: services } = useGetServicesQuery()
+    const { data: services, isLoading } = useGetServicesQuery()
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [service, setService] = useState({});
     const tomorrow = getTomorrowsDate()
@@ -63,10 +64,13 @@ function Services() {
 
             <div style={{ minHeight: '80vh' }}>
                 <div className={` ${JSON.parse(darkTheme) ? 'darkBg2' : 'lightBg2'}`} style={{ textAlign: 'center' }}>
-                    <h1 style={{ color: '#007BFF', padding: '20px' }}>Our Services</h1>
+                    <h1 style={{ color: '#007BFF', paddingTop: '20px', fontSize: '45px' }}>Our Services</h1>
 
 
                     <div>
+                        {
+                            isLoading && <Loading />
+                        }
                         {services?.map((service, index) => {
                             return (
                                 <WideCards
