@@ -6,10 +6,11 @@ import { ArrowRightOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import dynamic from 'next/dynamic';
+import Loading from '@/app/loading';
 
 function Services() {
 
-    const { data: services } = useGetServicesQuery()
+    const { data: services, isLoading } = useGetServicesQuery()
     const darkTheme = useSelector((state) => state.darkTheme);
 
     return (
@@ -20,6 +21,9 @@ function Services() {
                 fontWeight: 700,
                 padding: "40px 0px"
             }}>Our Top Services</h1>
+            {
+                isLoading && <Loading />
+            }
             <div className='cardContainer'>
                 {
                     services?.slice(0, 6)?.map(service => (

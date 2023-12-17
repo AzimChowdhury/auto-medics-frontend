@@ -3,7 +3,7 @@ import './loading.css'
 
 function LoadingSpinner() {
     return (
-        <div style={{ marginTop: "20%" }}>
+        <div style={{ margin: "20% 20%" }}>
             <div class="lds-facebook"><div></div><div></div><div></div></div>
         </div>
     )
