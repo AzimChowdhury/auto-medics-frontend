@@ -10,8 +10,8 @@ Auto-Medics is a car service booking application where registered user can book 
 
 ### credintials
 To explore the admin dashboard, use this email and password to login as an admin -
-Email - admin@gmail.com
-password - 123456
+- Email - admin@gmail.com
+- password - 123456
 
 ### tech description
 
