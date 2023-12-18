@@ -8,6 +8,11 @@
 
 Auto-Medics is a car service booking application where registered user can book any service with their suitable date and time. Auto-Medics has different dashboard for admins, customers and specialists. Where customers can manage all of his bookings and update profile data and can give review to this application. Admins also manage all the users, specialists, services and bookings very easily in dashboard. Whenever customer books a services customer got an confirmation notification and email. Admins and specialist are also notified with email. Admin can manually push any notification for any offer or notice.
 
+### credintials
+To explore the admin dashboard, use this email and password to login as an admin -
+Email - admin@gmail.com
+password - 123456
+
 ### tech description
 
 Frontend
