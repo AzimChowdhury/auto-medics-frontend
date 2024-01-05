@@ -68,20 +68,6 @@ For any query, feedback, review or suggestion contact with me via
 </pre>
 
 
-<style>
-#code-to-copy {
-    position: relative;
-}
-
-.btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-}
-</style>
- 
-
 
 
 
