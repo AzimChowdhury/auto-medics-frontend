@@ -11,16 +11,37 @@ Auto-Medics is a car service booking application where registered user can book 
 ### Credentials
 To explore the admin dashboard, use this email and password to login as an admin -
 
-- Email - admin@gmail.com
-  
-- password - 123456
+- Email 
+<pre>
+<code id="code-to-copy">
+admin@gmail.com
+</code>
+</pre>
+
+- password 
+<pre>
+<code id="code-to-copy">
+123456
+</code>
+</pre>
 
 
 To explore the specialist dashboard, use this email and password to login as a specialist -
 
-- Email - rock@gmail.com
+- Email 
+<pre>
+<code id="code-to-copy">
+rock@gmail.com
+</code>
+</pre>
 
-- password - 123456
+- password 
+<pre>
+<code id="code-to-copy">
+123456
+</code>
+</pre>
+ 
 
 
 And you can signup as a customer from the signup page.
@@ -54,23 +75,3 @@ Backend
 For any query, feedback, review or suggestion contact with me via
 
 #### Email - faijul.azim.360@gmail.com - [WhatsApp](https://api.whatsapp.com/send?phone=8801585449223) - [LinkedIn](https://www.linkedin.com/in/faijul-azim)
-
-
-
-
-
-
-
-<pre>
-<code id="code-to-copy">
- Final test
-</code>
-</pre>
-
-
-
-
-
-
-
-
