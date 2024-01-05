@@ -54,3 +54,57 @@ Backend
 For any query, feedback, review or suggestion contact with me via
 
 #### Email - faijul.azim.360@gmail.com - [WhatsApp](https://api.whatsapp.com/send?phone=8801585449223) - [LinkedIn](https://www.linkedin.com/in/faijul-azim)
+
+
+
+
+
+
+
+<pre>
+<code id="code-to-copy">
+ Your code here
+</code>
+</pre>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var clipboard = new ClipboardJS('#code-to-copy');
+
+    clipboard.on('success', function(e) {
+        console.log('Copied to clipboard');
+        e.clearSelection();
+    });
+
+    clipboard.on('error', function(e) {
+        console.error('Unable to copy to clipboard');
+    });
+});
+</script>
+<style>
+#code-to-copy {
+    position: relative;
+}
+
+.btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+</style>
+<pre>
+<code id="code-to-copy">
+ Your code here
+</code>
+<button class="btn" data-clipboard-target="#code-to-copy">
+    Copy
+</button>
+</pre>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+
