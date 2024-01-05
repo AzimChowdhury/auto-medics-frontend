@@ -84,20 +84,7 @@ For any query, feedback, review or suggestion contact with me via
 
 
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var clipboard = new ClipboardJS('#code-to-copy');
 
-    clipboard.on('success', function(e) {
-        console.log('Copied to clipboard');
-        e.clearSelection();
-    });
-
-    clipboard.on('error', function(e) {
-        console.error('Unable to copy to clipboard');
-    });
-});
-</script>
 
 
 
