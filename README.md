@@ -68,6 +68,22 @@ For any query, feedback, review or suggestion contact with me via
 </pre>
 
 
+<style>
+#code-to-copy {
+    position: relative;
+}
+
+.btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+</style>
+ 
+
+
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var clipboard = new ClipboardJS('#code-to-copy');
@@ -82,29 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-<style>
-#code-to-copy {
-    position: relative;
-}
-
-.btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-}
-</style>
-<pre>
-<code id="code-to-copy">
- Your code here
-</code>
-<button class="btn" data-clipboard-target="#code-to-copy">
-    Copy
-</button>
-</pre>
-
-
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 
