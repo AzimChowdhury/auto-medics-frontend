@@ -16,7 +16,9 @@
     padding: 6px 0px;
 }
 
-
+.wCardDes {
+    padding: 0 120px;
+}
 
 @media (max-width: 768px) {}
 
@@ -40,5 +42,10 @@
     .cardText {
         padding: 6px 10px;
     }
+
+    .wCardDes {
+        padding: 0 40px;
+    }
+
 
 }

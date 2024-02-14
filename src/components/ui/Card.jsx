@@ -23,7 +23,8 @@ const ReusableCard = ({ image, name, description, price }) => {
             <div >
                 <h4 className='cardName'>{name}</h4>
                 <h4 className='cardDescription'> Price: ${price}</h4>
-                <p className='cardDescription'>{description?.length > 50 ? <>{description?.split(0, 50)} . . .</> : description}</p>
+                <p className='cardDescription'>{description && description.length > 100 ? `${description.slice(0, 100)} . . .` : description}</p>
+
                 <Link href='/services'> <p className='cardDescription'> <button style={{ padding: '5px 10px', fontSize: '16px' }} className='gradientButton'>See Details</button></p></Link>
             </div>
             {/* </div> */}

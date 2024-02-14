@@ -8,7 +8,7 @@ function WideCards({ index, image, name, description, price, time, setIsModalOpe
     const router = useRouter()
     const { email, role } = getUserInfo()
     const darkTheme = useSelector((state) => state.darkTheme);
-    console.log(index, index % 2)
+
     return (
         <div
             style={(index % 2) ? { flexDirection: 'row-reverse' } : {}}
@@ -25,7 +25,7 @@ function WideCards({ index, image, name, description, price, time, setIsModalOpe
                 <h1 style={{ color: '#007BFF' }} className='cardText'>{name}</h1>
                 <h4 className='cardText'>Price: ${price}</h4>
                 <p className='cardText'>Service Time: {time}/hr</p>
-                <p className='cardText' style={{ textOverflow: 'ellipsis' }}>{description}</p>
+                <p className='cardText wCardDes' style={{ textOverflow: 'ellipsis' }}>{description}</p>
                 {
                     role === 'customer' &&
                     <Button
