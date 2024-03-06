@@ -41,13 +41,11 @@ body {
   cursor: pointer;
   font-size: 20px;
   padding: 10px 20px;
-  transition: all 0.4s ease-in-out;
-  /* Transition all properties */
-  animation: pulsate 0.8s ease-in-out infinite alternate;
-  /* Pulsating animation */
 }
 
 .gradientButton:hover {
+  transition: all 0.4s ease-in-out;
+  animation: pulsate 0.8s ease-in-out infinite alternate;
   transform: perspective(100px) rotateY(12deg);
   background: linear-gradient(to right, #1581fd, #0151ad, #010657);
 

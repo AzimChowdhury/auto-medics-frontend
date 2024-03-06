@@ -20,6 +20,13 @@
     height: 60px;
 }
 
+.headerImg:hover {
+
+    transition: all 0.4s ease-in-out;
+    animation: pulsate 0.8s ease-in-out infinite alternate;
+    transform: scale(1.1);
+}
+
 
 .header-menu {
     display: flex;
@@ -38,6 +45,12 @@
 .menu li {
     margin: 0px 20px;
     font-size: 18px;
+}
+
+.menu li:hover {
+    transition: all 0.4s ease-in-out;
+    animation: pulsate 0.4s ease-in-out infinite alternate;
+    transform: scale(1.2);
 }
 
 .dropdown {

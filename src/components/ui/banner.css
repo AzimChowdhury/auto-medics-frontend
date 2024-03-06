@@ -36,6 +36,14 @@
     width: 250px;
 }
 
+
+.bannerImg:hover {
+    transition: all 0.4s ease-in-out;
+    animation: pulsate 0.4s ease-in-out infinite alternate;
+    transform: scale(1.2);
+}
+
+
 @media (max-width: 768px) {
     .bannerSubTitles {
         text-align: center;

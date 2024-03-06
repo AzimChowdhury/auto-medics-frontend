@@ -6,7 +6,6 @@ import Image from 'next/image';
 
 function Banner() {
 
-
     const TextVariants = {
         offscreen: {
             width: 0,
@@ -104,7 +103,9 @@ function Banner() {
 
     return (
         <div style={divStyle}>
+
             <div className='logoContainer'>
+
                 <img className='bannerImg' src={'https://i.ibb.co/xY6tdZG/image-removebg-preview-1.png'} alt='' />
             </div>
             {/* <h1 className='bannerHeader'>AUTO MEDICS</h1> */}
