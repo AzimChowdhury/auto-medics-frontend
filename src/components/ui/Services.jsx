@@ -14,12 +14,12 @@ function Services() {
     const darkTheme = useSelector((state) => state.darkTheme);
 
     return (
-        <div className={`${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`} style={{ padding: '50px 0px' }}>
+        <div className={`${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`} style={{ padding: '30px 0px' }}>
             <h1 className='gradientHeader' style={{
                 textAlign: 'center',
-                fontSize: "42px",
+                fontSize: "38px",
                 fontWeight: 700,
-                padding: "40px 0px"
+                padding: "30px 0px"
             }}>Our Top Services</h1>
             {
                 isLoading && <Loading />

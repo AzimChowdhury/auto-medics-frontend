@@ -80,4 +80,12 @@
         width: 90%;
         text-align: center;
     }
+
+    .lcHeader {
+        font-size: 26px;
+    }
+
+    .wideP {
+        font-size: 16px;
+    }
 }

@@ -12,7 +12,7 @@ function Contact() {
             <div className='lcContent'>
                 <h1 className='gradientHeader lcHeader'>Don't be shy Contact us anytime</h1>
                 <p className='wideP'>24/7 Call Service</p>
-                <p className='wideP'>+880 1585 * * * * * *</p>
+                <p className='wideP'>+880 1839-703806</p>
                 <p className='wideP'>Email- auto-medics@gmail.com</p>
                 <p className='wideP'>Postal Code - 5464</p>
             </div>
