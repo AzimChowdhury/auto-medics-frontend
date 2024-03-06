@@ -170,7 +170,8 @@ const Header = () => {
             >
                 <div className="header">
                     <Link href='/'>
-                        <h1 className="headerText"  >AUTO-MEDICS</h1>
+                        {/* <h1 className="headerText"  >AUTO-MEDICS</h1> */}
+                        <img className="headerImg" src="https://i.ibb.co/mBCCPbc/image-removebg-preview-2.png" alt="" />
                     </Link>
                     <div>
                         <div className="header-menu">

@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import './banner.css'
 import { motion } from 'framer-motion'
+import Image from 'next/image';
 
 function Banner() {
 
@@ -103,8 +104,11 @@ function Banner() {
 
     return (
         <div style={divStyle}>
+            <div className='logoContainer'>
+                <img className='bannerImg' src={'https://i.ibb.co/xY6tdZG/image-removebg-preview-1.png'} alt='' />
+            </div>
             {/* <h1 className='bannerHeader'>AUTO MEDICS</h1> */}
-            <motion.h1
+            {/* <motion.h1
                 className="bannerHeader"
                 transition={{ staggerChildren: 0.2, duration: 0.1 }}
             >
@@ -127,7 +131,7 @@ function Banner() {
                         </motion.span>
                     ) : null
                 )}
-            </motion.h1>
+            </motion.h1> */}
             <div >
                 {/* <p className='bannerSubTitles'>The best car clinic nationwide</p> */}
                 <motion.p

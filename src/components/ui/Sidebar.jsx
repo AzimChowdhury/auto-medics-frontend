@@ -39,7 +39,13 @@ const SideBar = () => {
                     margin: "15px 0px",
                 }}
             >
-                <Link style={{ color: 'white' }} href={'/'}>Auto-Medics Dashboard</Link>
+                <Link style={{ color: 'white' }} href={'/'}>
+                    <img style={{
+
+                        width: '220px',
+                        height: '60px',
+                    }} src="https://i.ibb.co/mBCCPbc/image-removebg-preview-2.png" alt="" />
+                </Link>
             </div>
             <Menu
                 theme="dark"

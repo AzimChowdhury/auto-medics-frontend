@@ -24,6 +24,18 @@
         0 0 50px #000; */
 }
 
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bannerImg {
+    padding-top: 20px;
+    height: 220px;
+    width: 250px;
+}
+
 @media (max-width: 768px) {
     .bannerSubTitles {
         text-align: center;
@@ -45,4 +57,5 @@
         padding: 15px;
         font-size: 16px
     }
+
 }
