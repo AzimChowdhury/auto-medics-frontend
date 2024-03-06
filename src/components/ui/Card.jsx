@@ -10,14 +10,11 @@ const ReusableCard = ({ image, name, description, price }) => {
     const darkTheme = useSelector((state) => state.darkTheme);
     return (
         // <div className={`cardStyle ${darkTheme ? 'darkBg2' : 'lightBg2'}`}>
-        <motion.div
+        <div
             className={`cardStyle ${JSON.parse(darkTheme) ? 'darkBg2' : 'lightBg2'}`}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            drag="x"
-            dragConstraints={{ left: -100, right: 100 }}
+
         >
-            <div>
+            <div className='cardImageDiv'>
                 <img className='cardImage' src={image} />
             </div>
             <div >
@@ -25,10 +22,10 @@ const ReusableCard = ({ image, name, description, price }) => {
                 <h4 className='cardDescription'> Price: ${price}</h4>
                 <p className='cardDescription'>{description && description.length > 100 ? `${description.slice(0, 100)} . . .` : description}</p>
 
-                <Link href='/services'> <p className='cardDescription'> <button style={{ padding: '5px 10px', fontSize: '16px' }} className='gradientButton'>See Details</button></p></Link>
+                <Link href='/services'> <p className='cardDescription'> <button style={{ padding: '8px 20px', fontSize: '16px' }} className='gradientButton'>See Details</button></p></Link>
             </div>
             {/* </div> */}
-        </motion.div>
+        </div>
     )
 };
 export default dynamic(() => Promise.resolve(ReusableCard), { ssr: false })

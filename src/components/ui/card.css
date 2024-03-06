@@ -1,29 +1,42 @@
 .cardContainer {
-    display: grid;
-    justify-items: center;
+    padding: 0px 4%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    grid-template-columns: repeat(3, 1fr);
 }
 
 .cardStyle {
-    width: 300px;
+    width: 320px;
+    height: auto;
     /* background-color: rgb(245, 249, 253); */
-    border: 2px solid #007BFF;
+    /* border: 2px solid #007BFF; */
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
     border-radius: 20px;
     padding: 10px;
-    margin: 20px 0px;
+    margin: 20px 20px;
+}
+
+.cardImageDiv {
+    overflow: hidden;
 }
 
 .cardImage {
-    width: 280px;
+    width: 100%;
     border: 0px solid black;
     border-radius: 10px 10px 0 0;
     height: 250px;
 }
 
+.cardImage:hover {
+
+    transition: all 0.4s ease-in-out;
+    transform: perspective(100px) scale(1.2);
+}
+
 .cardName {
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
     padding: 10px 0px;
     color: #007BFF;
