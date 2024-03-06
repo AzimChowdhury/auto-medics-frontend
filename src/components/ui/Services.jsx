@@ -14,7 +14,7 @@ function Services() {
     const darkTheme = useSelector((state) => state.darkTheme);
 
     return (
-        <div className={`${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`} style={{ padding: '30px 0px' }}>
+        <div className={`${JSON.parse(darkTheme) ? 'darkBg2' : 'lightBg2'}`} style={{ padding: '30px 0px' }}>
             <h1 className='gradientHeader' style={{
                 textAlign: 'center',
                 fontSize: "38px",

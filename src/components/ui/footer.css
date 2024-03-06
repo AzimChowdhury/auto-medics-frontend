@@ -1,0 +1,12 @@
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    color: rgb(53, 53, 53);
+}
+
+.footer-container>div>p {
+    font-size: 18px;
+    font-weight: 500;
+}

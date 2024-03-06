@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 function News() {
     const darkTheme = useSelector((state) => state.darkTheme);
     return (
-        <div className={`${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`} style={{ padding: "30px 0px" }}>
+        <div className={`${JSON.parse(darkTheme) ? 'darkBg2' : 'lightBg2'}`} style={{ padding: "30px 0px" }}>
             {/* <h1 style={{ textAlign: 'center', paddingTop: '50px', zIndex: '99' }} className='aboutHeader gradientHeader'>Latest News of AutoMobile Industry</h1> */}
             <h1 style={{ textAlign: 'center', paddingTop: '25px' }} className='aboutHeader gradientHeader'>The garage of the future</h1>
             <p style={{ textAlign: 'center', fontSize: '24px', paddingTop: '25px' }}> The top innovations experts predict will be a reality in auto repair centres by 2050:</p>

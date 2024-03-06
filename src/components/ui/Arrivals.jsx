@@ -7,7 +7,7 @@ function Arrivals() {
     const darkTheme = useSelector((state) => state.darkTheme);
 
     return (
-        <div className={` ${JSON.parse(darkTheme) ? 'darkBg2' : 'lightBg2'}`}>
+        <div className={` ${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`}>
 
             <h1 style={{ textAlign: 'center', paddingTop: '50px', zIndex: '99' }} className='aboutHeader gradientHeader'>New arrivals in our garage</h1>
             <div className={`aboutContainer `}>

@@ -9,7 +9,7 @@ function Location() {
 
 
     return (
-        <div className={`lcContainer ${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`}>
+        <div className={`lcContainer ${JSON.parse(darkTheme) ? 'darkBg2' : 'lightBg2'}`}>
             <img className='lcImage' src="https://i.ibb.co/GMVTFMM/map-with-location-pin-vector.jpg" alt="" />
             <div className='lcContent'>
                 <h1 className='gradientHeader lcHeader'>Don't hesitate, <br /> Visit Us anytime</h1>

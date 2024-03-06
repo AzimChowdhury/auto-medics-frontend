@@ -1,15 +1,18 @@
 .reviewWidth {
     width: 45%;
+    height: 100%;
     margin: 20px auto;
 }
 
 
 .reviewContainer {
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    border: 1px solid #007BFF;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+    /* border: 1px solid #007BFF; */
     border-radius: 10px;
 }
 
@@ -35,6 +38,16 @@
 }
 
 
+#myCarousel .slick-dots li button {
+    background-color: #000;
+    border-radius: 2px;
+    width: 16px;
+    height: 4px;
+}
+
+#myCarousel .slick-dots li.slick-active button {
+    background-color: #000;
+}
 
 
 

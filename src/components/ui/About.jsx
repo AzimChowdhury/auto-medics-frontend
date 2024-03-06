@@ -10,7 +10,7 @@ function About() {
 
 
     return (
-        <div className={`aboutContainer ${JSON.parse(darkTheme) ? 'darkBg2' : 'lightBg2'}`}>
+        <div className={`aboutContainer ${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`}>
             <img className='aboutImage' src="https://i.ibb.co/ynVyDC3/F0331238-Car-service-centre.jpg" alt="" />
             <div className='aboutBody'>
                 <p className='aboutHeader gradientHeader'>Who are we ?</p>

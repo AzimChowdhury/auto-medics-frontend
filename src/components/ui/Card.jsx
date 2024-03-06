@@ -11,7 +11,7 @@ const ReusableCard = ({ image, name, description, price }) => {
     return (
         // <div className={`cardStyle ${darkTheme ? 'darkBg2' : 'lightBg2'}`}>
         <div
-            className={`cardStyle ${JSON.parse(darkTheme) ? 'darkBg2' : 'lightBg2'}`}
+            className={`cardStyle ${JSON.parse(darkTheme) ? 'darkBg1' : 'lightBg1'}`}
 
         >
             <div className='cardImageDiv'>
