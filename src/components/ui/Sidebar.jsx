@@ -41,7 +41,6 @@ const SideBar = () => {
             >
                 <Link style={{ color: 'white' }} href={'/'}>
                     <img style={{
-
                         width: '220px',
                         height: '60px',
                     }} src="https://i.ibb.co/mBCCPbc/image-removebg-preview-2.png" alt="" />
