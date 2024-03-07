@@ -105,9 +105,9 @@ function Services() {
                         <img width={'100%'} src={service?.image} alt="service image" />
                     </div>
                     <div style={{ width: "50%", paddingLeft: '10px' }}>
-                        <p style={{ fontSize: '15px', fontWeight: '600' }}>Price : $ {service?.price}</p>
-                        <p style={{ fontSize: '15px', fontWeight: '600' }}>Time :   {service?.time}/hr</p>
-                        <p>{service?.description?.length > 40 ? <>{service?.description?.split(0, 40)} . . .</> : service?.description} </p>
+                        <p style={{ fontSize: '14px', fontWeight: '600' }}>Price : $ {service?.price}</p>
+                        <p style={{ fontSize: '14px', fontWeight: '600' }}>Time :   {service?.time}/hr</p>
+                        <p style={{ fontSize: '12px' }}>{service?.description} </p>
                     </div>
                 </div>
 
@@ -118,7 +118,7 @@ function Services() {
                         <p>Choose Date</p>
                         <DatePicker onChange={(date, dateString) => {
                             setSelectedDate(dateString)
-                        }} defaultValue={dayjs(selectedDate, dateFormatList[0])} format={dateFormatList} disabledDate={disabledDate} />
+                        }} defaultValue={dayjs(selectedDate, format)} format={dateFormatList} disabledDate={disabledDate} />
                     </div>
                     <div style={{ width: "50%" }}>
                         <p>Choose Time</p>

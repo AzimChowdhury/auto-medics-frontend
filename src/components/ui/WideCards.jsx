@@ -28,7 +28,7 @@ function WideCards({ index, image, name, description, price, time, setIsModalOpe
                 <p className='cardText wCardDes' style={{ textOverflow: 'ellipsis' }}>{description}</p>
                 {
                     role === 'customer' &&
-                    <Button
+                    <button className='gradientButton'
                         onClick={
                             email
                                 ? () => {
@@ -37,11 +37,11 @@ function WideCards({ index, image, name, description, price, time, setIsModalOpe
                                 }
                                 : () => router.push('/auth/signin')
                         }
-                        style={{ margin: '20px 0px' }}
+                        style={{ margin: '20px 0px', fontSize: '16px' }}
                         type='primary'
                     >
                         Book this service
-                    </Button>
+                    </button>
                 }
             </div>
         </div >

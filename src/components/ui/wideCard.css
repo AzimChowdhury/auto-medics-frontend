@@ -9,8 +9,21 @@
 .cardImage2 {
     width: 400px;
     height: auto;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
 
 }
+
+.cardImage2:hover {
+    transition: all 0.4s ease-in-out;
+    animation: pulsate 0.8s ease-in-out infinite alternate;
+    transform: perspective(100px) rotateY(2deg);
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
 
 .cardText {
     padding: 6px 0px;
