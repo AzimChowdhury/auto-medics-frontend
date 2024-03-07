@@ -55,19 +55,24 @@
 
 @media (max-width: 768px) {
     .reviewWidth {
-        width: 60%;
+        width: 70%;
         margin: 20px auto;
+    }
+
+    .reviewContainer {
+        height: 300px;
     }
 }
 
 
 @media (max-width: 480px) {
     .reviewWidth {
-        width: 80%;
+        width: 95%;
         margin: 20px auto;
     }
 
     .reviewContainer {
+        height: 400px;
         display: flex;
         flex-direction: column;
         justify-content: center;
