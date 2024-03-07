@@ -16,23 +16,42 @@ function FooterComponent() {
             className={`${JSON.parse(darkTheme) ? 'darkBg2' : 'lightBg2'}`}
         >
             <div className='footer-container'>
-                <div>
-                    <p>Address</p>
+                <div className='footerSections'>
+                    <div className='footerImgContainer'>
+                        <img className='footerImg' src="https://i.ibb.co/g9H82G8/Picture1.png" alt="" />
+                        <p>Auto-Medics Avenue</p>
+                        <p>26/6 Agrabad, Chittagong</p>
+                        <p>27 No. Ward</p>
+                        <p>Chittagong City.</p>
+                    </div>
                 </div>
-                <div>
+                <div className='footerSections'>
                     <p>Links</p>
+                    <div className='footerOptions'>
+                        <p>Services</p>
+                        <p>About Us</p>
+                        <p>Terms and Conditions</p>
+                        <p>Refund policy</p>
+                        <p>Privacy Policy</p>
+                    </div>
                 </div>
-                <div>
+                <div className='footerSections'>
                     <p>Support</p>
+                    <div className='footerOptions'>
+                        <p>auto-medics@gmail.com</p>
+                        <p>+880 1839-703806</p>
+                        <p>(Available : Sat - Thu, 10:00 AM to 10:00 PM)</p>
+                    </div>
                 </div>
-                <div>
+                <div className='footerSections'>
                     <p>Follow us</p>
+                    <img className='socialIcons' src="https://i.ibb.co/3WtFMhj/Picture111.png" alt="" />
                 </div>
             </div>
 
 
 
-            <p style={{ textAlign: 'center' }}>Auto-Medics ©{year} - All rights reserved by  <Link style={{ fontWeight: 500 }} target='_blank' href='https://azim-profile.netlify.app/'>Faijul Azim</Link> </p>
+            <p className='copyright'>Auto-Medics ©{year} - All rights reserved by  <Link style={{ fontWeight: 500 }} target='_blank' href='https://azim-profile.netlify.app/'>Faijul Azim</Link> </p>
         </Footer>
     )
 }
