@@ -32,3 +32,28 @@
 .profileButton {
     width: 100%;
 }
+
+@media (max-width: 1000px) {
+    .profileContainer {
+        width: 60%;
+        margin: 0px auto;
+        background-color: #F5F5F5;
+        border: 2px solid rgb(1, 58, 143);
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .profileContainer {
+        width: 85%;
+        margin: 0px auto;
+        background-color: #F5F5F5;
+        border: 2px solid rgb(1, 58, 143);
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px;
+    }
+}

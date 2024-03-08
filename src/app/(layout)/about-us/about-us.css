@@ -1,10 +1,7 @@
-.gradientHeader {
-    background: linear-gradient(90deg, #010657, #0169df, #278bfd);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    padding: 10px 0px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Rubik:wght@300;400;500;600;700&display=swap');
+
+
+
 
 .aboutContainer2 {
     padding: 30px 70px;
@@ -15,10 +12,28 @@ p {
     letter-spacing: 0.6px;
 }
 
+.aboutImgContainer {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
 
+@media (max-width: 768px) {
+    .aboutContainer2 {
+        padding: 20px 30px;
+    }
+
+    .aboutImgContainer>img {
+        width: 400px;
+    }
+}
 
 @media (max-width: 480px) {
     .aboutContainer2 {
         padding: 20px 30px;
+    }
+
+    .aboutImgContainer>img {
+        width: 300px;
     }
 }

@@ -13,16 +13,14 @@ const Contents = ({ children }) => {
     return (
         <Content style={{ minHeight: "100vh", marginTop: '20px' }}>
 
-            <Link href='/' style={{ fontSize: "35px", marginLeft: "20px", display: "inline-block" }}><HomeTwoTone /></Link>
+            {/* <Link href='/' style={{ fontSize: "35px", marginLeft: "20px", display: "inline-block" }}><HomeTwoTone /></Link> */}
             <h1 style={{
                 textAlign: 'center',
-                fontSize: '35px',
+                fontSize: '30px',
                 background: 'linear-gradient(90deg, #000875, #2387fa)',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 color: 'transparent',
-                marginTop: '-40px',
-                marginBottom: '20px'
             }}>
                 Auto-Medics {role && role?.charAt(0)?.toUpperCase() + role?.slice(1)} Dashboard
             </h1>

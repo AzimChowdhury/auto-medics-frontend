@@ -18,16 +18,18 @@ const SideBar = () => {
     const { role } = getUserInfo()
     return (
         <Sider
+            collapsible={true}
+            collapsedWidth={40}
             width={250}
             style={{
                 overflow: "auto",
                 height: "100vh",
-                position: "sticky",
+                position: "fixed", // Key change for overlay behavior
                 left: 0,
                 top: 0,
                 bottom: 0,
-                background: 'linear-gradient(to bottom, #000875,#020c9c, #007BFF)',
-
+                background: "linear-gradient(to bottom, #000875,#020c9c, #007BFF)",
+                zIndex: 1000, // Ensure overlay with high z-index
             }}
         >
             <div
@@ -41,8 +43,8 @@ const SideBar = () => {
             >
                 <Link style={{ color: 'white' }} href={'/'}>
                     <img style={{
-                        width: '220px',
-                        height: '60px',
+                        width: '90%',
+                        height: 'auto',
                     }} src="https://i.ibb.co/mBCCPbc/image-removebg-preview-2.png" alt="" />
                 </Link>
             </div>
