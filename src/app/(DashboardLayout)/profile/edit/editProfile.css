@@ -2,7 +2,7 @@
     width: 40%;
     margin: 0px auto;
     background-color: #F5F5F5;
-    border: 2px solid rgb(1, 58, 143);
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 1);
     border-radius: 10px;
     padding: 20px;
 }
@@ -23,4 +23,17 @@
 
 .profileButton {
     width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .editProfileContainer {
+        width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .editProfileContainer {
+        width: 90%;
+    }
 }
