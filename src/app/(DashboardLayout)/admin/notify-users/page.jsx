@@ -21,7 +21,7 @@ function NotifyUsers() {
         }
     }
     return (
-        <div style={{ width: '40%', margin: '20px auto' }}>
+        <div className='profileContainer'>
             <h1 className='gradientHeader' style={{ textAlign: 'center', margin: '10px 0px' }}>Notify all the Customers</h1>
             <Form submitHandler={onSubmit}>
                 <FormInput name='title' type="text" size="larger" label="Title" required={true} />

@@ -80,3 +80,15 @@ body {
   background-color: #EDEFF6;
   color: black;
 }
+
+.ant-table-wrapper {
+  overflow-x: auto;
+}
+
+.ant-table-thead th {
+  white-space: nowrap;
+}
+
+.ant-table-tbody tr {
+  background-color: white;
+}

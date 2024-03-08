@@ -11,7 +11,7 @@ import Link from 'next/link';
 const Contents = ({ children }) => {
     const { role } = getUserInfo()
     return (
-        <Content style={{ minHeight: "100vh", marginTop: '20px' }}>
+        <Content style={{ minHeight: "100vh", marginTop: '20px', marginLeft: '25px' }}>
 
             {/* <Link href='/' style={{ fontSize: "35px", marginLeft: "20px", display: "inline-block" }}><HomeTwoTone /></Link> */}
             <h1 style={{
