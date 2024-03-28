@@ -36,7 +36,7 @@ Backend
 
 ### Credentials
 
-User can create account and login from sign up page.
+User can create account and login from sign up page and explore from users perspective.
 
 #### For exploring the Admin dashboard can use the following credentials
 
