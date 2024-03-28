@@ -32,6 +32,31 @@ Backend
 - zod
 - nodemailer
 
+
+
+### Credentials
+
+User can create account and login from sign up page.
+
+#### For exploring the Admin dashboard can use the following credentials
+
+- Email
+<pre>
+<code id="code-to-copy">
+admin@gmail.com
+</code>
+</pre>
+
+- Password 
+<pre>
+<code id="code-to-copy">
+123456
+</code>
+</pre>
+
+
+
+
 ### Contact with me
 
 For any query, feedback, review or suggestion contact with me via
