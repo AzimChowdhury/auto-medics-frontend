@@ -1,6 +1,7 @@
 'use client'
 import dynamic from 'next/dynamic'
-import './about-us.css'
+import './about-us.css';
+import '../../../components/ui/compo-about.css';
 import { useSelector } from 'react-redux';
 
 
@@ -14,11 +15,22 @@ function AboutUs() {
             <div className='aboutImgContainer'>
                 <img src="https://i.ibb.co/ZhwtFJw/image-removebg-preview-3.png" alt="" />
             </div>
-            <div className={`aboutContainer2`}>
+            <div>
 
-                <h3 style={{ color: '#046CE1', fontSize: '18px', padding: '10px 0px' }}>Auto-Medics : Your Trusted Car Care Partner </h3>
+                <div className='aboutContainer'>
+                    <div className='aboutBody'>
+                        <h3 className='aboutHeader gradientHeader'>Auto-Medics : Your Trusted Car Care Partner </h3>
 
-                <p>At Auto-Medics, we are more than just a car servicing center in Chittagong. We are your dedicated automotive solutions partner, committed to providing top-notch services and expertise that keep your vehicle running smoothly. With a passion for automobiles and a mission to exceed your expectations, we have been serving the local community for 5 years. </p>
+                        <p className='aboutTexts'>At Auto-Medics, we are more than just a car servicing center in Chittagong. We are your dedicated automotive solutions partner, committed to providing top-notch services and expertise that keep your vehicle running smoothly. With a passion for automobiles and a mission to exceed your expectations, we have been serving the local community for 5 years. </p>
+                    </div>
+                    <img className='aboutImage' src="https://i.ibb.co/ynVyDC3/F0331238-Car-service-centre.jpg" alt="" />
+                </div>
+
+
+
+
+                {/* 
+                
 
                 <h3 style={{ color: '#046CE1', fontSize: '18px', padding: '10px 0px' }}>Our Mission</h3>
 
@@ -71,7 +83,7 @@ function AboutUs() {
                 <p> For all your car service needs, Auto-Medics is your trusted partner. Contact us at auto-medics@gmail.com or book your appointment through this website. We look forward to taking care of your vehicle and ensuring your peace of mind on the road.</p>
 
                 <p> At Auto-Medics, we are not just servicing cars; we are nurturing trust, quality, and reliability. Join us in your journey towards hassle-free, efficient, and safe driving.</p>
-
+ */}
             </div>
         </div>
     )

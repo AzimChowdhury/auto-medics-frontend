@@ -7,10 +7,11 @@ import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import dynamic from 'next/dynamic';
 import Loading from '@/app/loading';
+import ServerDown from './serverDown';
 
 function Services() {
 
-    const { data: services, isLoading } = useGetServicesQuery()
+    const { data: services, isLoading, error } = useGetServicesQuery()
     const darkTheme = useSelector((state) => state.darkTheme);
 
     return (
@@ -23,6 +24,9 @@ function Services() {
             }}>Our Top Services</h1>
             {
                 isLoading && <Loading />
+            }
+            {
+                <ServerDown />
             }
             <div className='cardContainer'>
                 {
