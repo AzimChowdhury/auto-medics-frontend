@@ -25,16 +25,20 @@ function AboutUs() {
                     </div>
                     <img className='aboutImage' src="https://i.ibb.co/ynVyDC3/F0331238-Car-service-centre.jpg" alt="" />
                 </div>
+                <div className='aboutContainer cs'>
+                    <div className='aboutBody'>
+                        <h3 className='aboutHeader gradientHeader'>Our Mission </h3>
+
+                        <p className='aboutTexts'>Our mission is simple: to offer comprehensive car services and solutions for all your automobile problems, all under one roof. We understand the importance of your vehicle in your daily life and are dedicated to ensuring it operates at its best. Whether it is a routine checkup, complex repairs, or customized solutions, Auto-Medics is here to keep you on the road safely and efficiently. </p>
+                    </div>
+                    <img className='aboutImage' src="https://i.ibb.co/G2bZB6s/Telematics-obstacles.jpg" alt="" />
+                </div>
 
 
 
 
                 {/* 
-                
-
-                <h3 style={{ color: '#046CE1', fontSize: '18px', padding: '10px 0px' }}>Our Mission</h3>
-
-                <p> Our mission is simple: to offer comprehensive car services and solutions for all your automobile problems, all under one roof. We understand the importance of your vehicle in your daily life and are dedicated to ensuring it operates at its best. Whether it is a routine checkup, complex repairs, or customized solutions, Auto-Medics is here to keep you on the road safely and efficiently.</p>
+                 
 
                 <h3 style={{ color: '#046CE1', fontSize: '18px', padding: '10px 0px' }}>Our Team</h3>
 

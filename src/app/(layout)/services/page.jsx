@@ -10,11 +10,12 @@ import { useCreateBookingsMutation } from '@/redux/api/bookingsApi';
 import { useSelector } from 'react-redux';
 import dynamic from 'next/dynamic';
 import Loading from '@/app/loading';
+import ServerDown from '@/components/ui/serverDown';
 
 
 
 function Services() {
-    const { data: services, isLoading } = useGetServicesQuery()
+    const { data: services, isLoading, error } = useGetServicesQuery()
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [service, setService] = useState({});
     const tomorrow = getTomorrowsDate()
@@ -70,6 +71,9 @@ function Services() {
                     <div>
                         {
                             isLoading && <Loading />
+                        }
+                        {
+                            error && <ServerDown />
                         }
                         {services?.map((service, index) => {
                             return (

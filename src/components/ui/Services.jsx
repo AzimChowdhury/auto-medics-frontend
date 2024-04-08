@@ -26,7 +26,7 @@ function Services() {
                 isLoading && <Loading />
             }
             {
-                <ServerDown />
+                error && <ServerDown />
             }
             <div className='cardContainer'>
                 {
