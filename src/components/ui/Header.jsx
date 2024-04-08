@@ -185,7 +185,7 @@ const Header = () => {
                                 {
                                     user ?
                                         <>
-                                            <li><Link style={{ color: "white" }} href="/profile">Dashboard</Link></li>
+                                            <li><Link style={{ color: "white" }} href={user?.role === 'admin' ? "/admin/dashboard" : '/profile'}>Dashboard</Link></li>
 
                                             {
                                                 user?.role === 'customer' && <li style={{ cursor: 'pointer' }} onClick={showDrawer}>

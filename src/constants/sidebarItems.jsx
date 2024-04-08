@@ -14,6 +14,7 @@ import {
     CheckCircleOutlined,
     CarryOutOutlined,
     DeploymentUnitOutlined,
+    DashboardOutlined
 } from "@ant-design/icons";
 import Link from "next/link";
 
@@ -30,12 +31,18 @@ export const sidebarItems = (role) => {
 
 
     const adminSidebarItems = [
+        {
+            label: <Link href={`/${role}/dashboard`}>Dashboard</Link>,
+            key: "/dashboard",
+            icon: <DashboardOutlined />
+        },
         ...defaultSidebarItems,
         {
             label: <Link href={`/${role}/manage-customers`}>Manage Customers</Link>,
             key: "/manage-customers",
             icon: <UserOutlined />
         },
+
         {
             label: <Link href={`/${role}/manage-admin`}>Manage Admin</Link>,
             key: "/manage-admin",
