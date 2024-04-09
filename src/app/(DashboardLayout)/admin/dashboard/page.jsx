@@ -11,8 +11,8 @@ const Dashboard = () => {
     return (
         <div className="dashboard">
             <DashSec1 />
-            <DashSec2 />
             <DashSec3 />
+            <DashSec2 />
             <DashSec4 />
         </div>
     );
