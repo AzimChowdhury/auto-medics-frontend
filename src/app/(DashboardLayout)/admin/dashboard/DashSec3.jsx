@@ -6,7 +6,8 @@ function DashSec3() {
     return (
         <div className="section section2">
             <p className='sectionHeader'>Auto Medics States <span style={{ fontSize: '12px', color: 'gray' }}>(Hover to see details)</span></p>
-            <DashSec3BarChart />
+            <DashSec3BarChart
+            />
         </div>
     )
 }

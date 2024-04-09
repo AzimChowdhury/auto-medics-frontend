@@ -11,7 +11,10 @@ const popularServices = [
     { name: 'Bookings', total: 55 }
 ];
 
+
+
 export default class DashSec2BarChart extends PureComponent {
+
 
     render() {
         return (
