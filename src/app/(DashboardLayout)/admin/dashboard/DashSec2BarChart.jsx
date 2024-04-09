@@ -4,21 +4,21 @@ import './dashboard.css';
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const popularServices = [
-    { name: 'Car Wash', booking: 5 },
-    { name: 'Engine Diagnostic', booking: 7 },
-    { name: 'Oil Change', booking: 9 },
-    { name: 'Tire Rotation', booking: 3 },
-    { name: 'Brake Inspection', booking: 6 },
-    { name: 'Alignment Service', booking: 4 },
-    { name: 'Battery Replacement', booking: 8 },
-    { name: 'Transmission Flush', booking: 2 },
-    { name: 'Wheel Alignment', booking: 5 },
     { name: 'Air Conditioning Service', booking: 10 },
+    { name: 'Oil Change', booking: 9 },
+    { name: 'Battery Replacement', booking: 8 },
+    { name: 'Diagnostic Service', booking: 8 },
+    { name: 'Engine Diagnostic', booking: 7 },
     { name: 'Spark Plug Replacement', booking: 7 },
-    { name: 'Coolant Flush', booking: 3 },
+    { name: 'Brake Inspection', booking: 6 },
     { name: 'Timing Belt Replacement', booking: 6 },
+    { name: 'Car Wash', booking: 5 },
+    { name: 'Wheel Alignment', booking: 5 },
+    { name: 'Alignment Service', booking: 4 },
     { name: 'Fuel System Cleaning', booking: 4 },
-    { name: 'Diagnostic Service', booking: 8 }
+    { name: 'Tire Rotation', booking: 3 },
+    { name: 'Coolant Flush', booking: 3 },
+    { name: 'Transmission Flush', booking: 2 },
 ];
 
 
