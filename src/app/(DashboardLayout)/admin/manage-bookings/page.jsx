@@ -42,7 +42,7 @@ const ManageBookings = () => {
 
     const [deleteBookings] = useDeleteBookingsMutation()
     const { data, isLoading } = useGetBookingsQuery({ role, email });
-    console.log(data)
+    // console.log(data)
 
     const bookings = data;
     const meta = data?.meta;

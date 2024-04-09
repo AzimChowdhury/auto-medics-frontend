@@ -43,8 +43,7 @@ const ManageCustomers = () => {
     const [deleteCustomer] = useDeleteCustomerMutation()
 
     const { data, isLoading } = useGetCustomersQuery({ ...query });
-
-
+    console.log(query);
     const customers = data;
     const meta = data?.meta;
 
