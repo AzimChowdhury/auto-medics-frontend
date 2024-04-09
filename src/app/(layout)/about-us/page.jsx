@@ -40,13 +40,13 @@ function AboutUs() {
                     <div className='aboutBody'>
                         <h3 className='aboutHeader gradientHeader'>Our Services</h3>
 
-                        <p className='aboutTexts'><ul>Auto-Medics offers a wide range of services, including:
+                        <div className='aboutTexts'><ul>Auto-Medics offers a wide range of services, including:
 
                             <li>Regular Maintenance: From oil changes and tire rotations to brake checks and fluid top-ups, we will keep your vehicle in top shape.</li>
                             <li> Repairs and Diagnostics: Our advanced diagnostics tools and experienced mechanics will quickly identify and resolve any issues.</li>
                             <li>Customized Solutions: For car enthusiasts or owners of specialty vehicles, we provide tailored solutions to meet your unique needs.</li>
                             <li>Spare Parts and Accessories: We stock genuine spare parts and high-quality accessories to enhance your vehicles performance.</li>
-                        </ul></p>
+                        </ul></div>
                     </div>
                     <img className='aboutImage' src="https://i.ibb.co/q08ZcjD/21-b5c2a3bc-6a48-4be0-a8f0-985bf47c0e1a.png" alt="" />
                 </div>
@@ -65,7 +65,7 @@ function AboutUs() {
                     <div className='aboutBody'>
                         <h3 className='aboutHeader gradientHeader'>Why Choose Us?</h3>
 
-                        <p className='aboutTexts'>
+                        <div className='aboutTexts'>
                             <ul>
                                 <li>
                                     Reliability: We understand the trust you place in us to care for your vehicle. Auto-Medics takes this responsibility seriously, ensuring all work is done to the highest standards.
@@ -81,7 +81,7 @@ function AboutUs() {
                                 </li>
 
                             </ul>
-                        </p>
+                        </div>
                     </div>
                     <img className='aboutImage' src="https://i.ibb.co/0jF8Q3y/fs19-dl-garageofthefuture-850.jpg" alt="" />
                 </div>
@@ -103,11 +103,11 @@ function AboutUs() {
                     <div className='aboutBody'>
                         <h3 className='aboutHeader gradientHeader'>Contact Us</h3>
 
-                        <p className='aboutTexts'>
+                        <div className='aboutTexts'>
                             <p> For all your car service needs, Auto-Medics is your trusted partner. Contact us at auto-medics@gmail.com or book your appointment through this website. We look forward to taking care of your vehicle and ensuring your peace of mind on the road.</p>
 
                             <p> At Auto-Medics, we are not just servicing cars; we are nurturing trust, quality, and reliability. Join us in your journey towards hassle-free, efficient, and safe driving.</p>
-                        </p>
+                        </div>
                     </div>
                     <img className='aboutImage' src="https://i.ibb.co/zX61VtX/image.png" alt="" />
                 </div>

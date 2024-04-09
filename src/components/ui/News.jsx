@@ -14,7 +14,7 @@ function News() {
                 <img className='aboutImage' src="https://i.ibb.co/0jF8Q3y/fs19-dl-garageofthefuture-850.jpg" alt="" />
                 <div className='aboutBody'>
 
-                    <p className='aboutTexts'>
+                    <div className='aboutTexts'>
                         <ul>
 
 
@@ -25,7 +25,7 @@ function News() {
                             <li>Advanced Security Systems: High-tech surveillance, biometric access control, and AI-driven security measures will protect both customer vehicles</li>
                             <li>Innovative staff training areas for mechanics to learn as technology evolves</li>
                         </ul>
-                    </p>
+                    </div>
                 </div>
             </div>
 
@@ -34,7 +34,7 @@ function News() {
                 <img className='aboutImage' src="https://i.ibb.co/q08ZcjD/21-b5c2a3bc-6a48-4be0-a8f0-985bf47c0e1a.png" alt="" />
                 <div className='aboutBody'>
 
-                    <p className='aboutTexts'>
+                    <div className='aboutTexts'>
                         <ul>
 
 
@@ -45,7 +45,7 @@ function News() {
                             <li>AI-driven customer service bots providing instant updates and personalized recommendations</li>
                             <li>Drones used for quick and thorough inspections of vehicles, especially for hard-to-reach areas</li>
                         </ul>
-                    </p>
+                    </div>
                 </div>
             </div>
 

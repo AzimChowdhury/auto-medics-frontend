@@ -1,0 +1,44 @@
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.section {
+    background-color: #0160E7;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: 10px;
+    height: 250px;
+}
+
+.section1 {
+    display: flex;
+    margin: 10px;
+    height: 250px;
+}
+
+.totalUsers {
+    width: 30%;
+    height: 100%;
+    background-color: #0160E7;
+    margin-right: 10px;
+    border-radius: 15px;
+}
+
+.sec1subDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+.total {
+    background-color: #0160E7;
+    border-radius: 15px;
+}
+
+.section2 {}
+
+.section3 {}
+
+.section4 {}
