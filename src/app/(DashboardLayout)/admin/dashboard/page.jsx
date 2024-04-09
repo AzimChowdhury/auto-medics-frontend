@@ -6,25 +6,25 @@ const Dashboard = () => {
         <div className="dashboard">
             <div className=" section1">
                 <div className="totalUsers">
-                    <p>Total Users</p>
-                    <h1>30</h1>
+                    <p className="totalHeading">Total Users</p>
+                    <p className="totalNumber">30</p>
                 </div>
                 <div className="sec1subDiv">
                     <div className="total totalServices">
-                        <p>Total Services</p>
-                        <h1>15</h1>
+                        <p className="totalHeading">Total Services</p>
+                        <p className="totalNumber">15</p>
                     </div>
                     <div className="total totalBookings">
-                        <p>Total Bookings</p>
-                        <h1>50</h1>
+                        <p className="totalHeading">Total Bookings</p>
+                        <p className="totalNumber">50</p>
                     </div>
                     <div className="total totalCustomers">
-                        <p>Total Customers</p>
-                        <h1>20</h1>
+                        <p className="totalHeading">Total Customers</p>
+                        <p className="totalNumber">20</p>
                     </div>
                     <div className="total totalSpecialists">
-                        <p>Total Specialists</p>
-                        <h1>5</h1>
+                        <p className="totalHeading">Total Specialists</p>
+                        <p className="totalNumber">05</p>
                     </div>
 
                 </div>
