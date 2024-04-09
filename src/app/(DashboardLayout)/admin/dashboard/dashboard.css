@@ -4,16 +4,16 @@
 }
 
 .section {
-    background-color: #0160E7;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-    margin: 10px;
+    margin: 5px;
     height: 250px;
 }
 
 .section1 {
     display: flex;
-    margin: 10px;
+    margin: 5px;
     height: 250px;
 }
 
@@ -49,8 +49,15 @@
 }
 
 .totalNumber {
-    font-size: 35px;
+    font-size: 40px;
     font-weight: 600;
+}
+
+.sectionHeader {
+    font-size: 20px;
+    font-weight: 500;
+    color: #0160E7;
+    padding: 10px 20px;
 }
 
 .section2 {}
