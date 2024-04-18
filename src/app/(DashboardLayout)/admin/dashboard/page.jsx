@@ -34,11 +34,11 @@ const Dashboard = () => {
     return (
         <div className="dashboard">
             <DashSec1
-                totalUser={totalUser}
-                service={service?.length}
-                booking={booking?.length}
-                customer={customer?.length}
-                specialist={specialist?.length}
+                totalUser={35}
+                service={16}
+                booking={36}
+                customer={26}
+                specialist={9}
             />
             <DashSec3
             />

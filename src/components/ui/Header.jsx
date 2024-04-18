@@ -95,7 +95,7 @@ const Header = () => {
         {
             key: "2",
             label: (
-                <Link className="dropdownItem" href='/profile'  >
+                <Link className="dropdownItem" href={user?.role === 'admin' ? "/admin/dashboard" : '/profile'}  >
                     Dashboard
                 </Link>
             ),
