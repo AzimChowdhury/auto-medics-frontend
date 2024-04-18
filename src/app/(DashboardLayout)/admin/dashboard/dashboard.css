@@ -100,4 +100,45 @@
     }
 }
 
-@media (max-width: 520px) {}
+@media (max-width: 520px) {
+    .section1 {
+        display: flex;
+        margin: 5px;
+        height: 200px;
+    }
+
+    .total,
+    .totalUsers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: white;
+        background-color: #0160E7;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .totalUsers {
+        width: 40%;
+        height: 100%;
+        margin-right: 10px;
+    }
+
+    .sec1subDiv {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 100%;
+    }
+
+    .totalHeading {
+        font-size: 14px;
+    }
+
+    .totalNumber {
+        font-size: 25px;
+        font-weight: 500;
+    }
+}
