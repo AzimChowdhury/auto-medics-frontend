@@ -32,8 +32,40 @@ Backend
 - zod
 - nodemailer
 
+### Credentials
+
+User can create account and login from sign up page and explore from users perspective.
+
+#### For exploring the Admin dashboard can use the following credentials
+
+- Email
+<pre>
+<code id="code-to-copy">
+admin@gmail.com
+</code>
+</pre>
+
+- Password 
+<pre>
+<code id="code-to-copy">
+123456
+</code>
+</pre>
+
+
+
+
+
 ### Contact with me
 
 For any query, feedback, review or suggestion contact with me via
 
-#### Email - faijul.azim.360@gmail.com - [WhatsApp](https://api.whatsapp.com/send?phone=8801585449223) - [LinkedIn](https://www.linkedin.com/in/faijul-azim)
+#### Email  
+<pre>
+<code id="code-to-copy">
+faijul.azim.360@gmail.com 
+</code>
+</pre>
+
+#### [WhatsApp](https://api.whatsapp.com/send?phone=8801585449223) 
+#### [LinkedIn](https://www.linkedin.com/in/faijul-azim)
